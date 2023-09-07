@@ -1,0 +1,48 @@
+[
+    {
+      "title": "Camping Tent",
+      "description": "A spacious camping tent for your outdoor adventures.",
+      "price": 199.99,
+      "image": "//client/public/images/camping-tent.jpg",
+      "productId": "P1",
+      "category": "camping",
+      "isOnSale": true,
+      "discountPercentage": 20
+    },
+    {
+      "title": "Hiking Backpack",
+      "description": "A lightweight backpack for your hiking trips.",
+      "price": 79.99,
+      "image": "//client/public/images/hiking-backpack.jpg",
+      "productId": "P2",
+      "category": "hiking"
+    },
+    {
+      "title": "Used Snowboard",
+      "description": "A high-quality used snowboard for winter sports enthusiasts.",
+      "price": 149.99,
+      "image": "//client/public/images/used-snowboard.jpg",
+      "productId": "P3",
+      "category": "snow",
+      "isUsed": true,
+      "isOnSale": true,
+      "discountPercentage": 15
+    },
+    {
+      "title": "Waterproof Kayak",
+      "description": "A durable kayak for water adventures.",
+      "price": 299.99,
+      "image": "//client/public/images/kayak.jpg",
+      "productId": "P4",
+      "category": "water"
+    },
+    {
+      "title": "Travel Pillow",
+      "description": "A comfortable pillow for frequent travelers.",
+      "price": 49.99,
+      "image": "//client/public/images/travel-pillow.jpg",
+      "productId": "P5",
+      "category": "travel"
+    }
+]
+  

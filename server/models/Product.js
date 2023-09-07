@@ -25,6 +25,25 @@ const productSchema = new Schema(
             required: true,
             unique: true,
         },
+        category: {
+            type: String,
+            enum: ['camping', 'hiking', 'snow', 'water', 'travel'],
+            required: true,
+        },
+        isUsed: {
+            type: Boolean,
+            default: false,
+        },
+        isOnSale: {
+            type: Boolean,
+            default: false,
+        },
+        discountPercentage: {
+            type: Number,
+            min: 0,
+            max: 100,
+            default: 0,
+        },
     }
 );
 
