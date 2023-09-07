@@ -43,6 +43,51 @@
       "image": "//client/public/images/travel-pillow.jpg",
       "productId": "P5",
       "category": "travel"
+    },
+    {
+        "title": "Camping Chair",
+        "description": "A portal camping chair for avid campers.",
+        "price": 44.99,
+        "image": "//client/public/images/camping-chair.jpg",
+        "productId": "P6",
+        "category": "camping"
+    },
+    {
+        "title": "Hiking Pole",
+        "description": "A sturdy hiking pole for your outdoor expeditions.",
+        "price": 109.99,
+        "image": "//client/public/images/hiking-pole.jpg",
+        "productId": "P7",
+        "category": "hiking",
+        "isUsed": true,
+        "isOnSale": true,
+        "discountPercentage": 50
+    },
+    {
+        "title": "Snow Pants",
+        "description": "Warm and waterproof snow pants for cold weather.",
+        "price": 59.99,
+        "image": "//client/public/images/snow-pants.jpg",
+        "productId": "P8",
+        "category": "snow",
+        "isOnSale": true,
+        "discountPercentage": 10
+    },
+    {
+        "title": "Unicorn Pool Floaty",
+        "description": "A fun unicorn-themed pool floaty for a day at the pool.",
+        "price": 29.99,
+        "image": "//client/public/images/unicorn-pool-float.jpg",
+        "productId": "P9",
+        "category": "water"
+    },
+    {
+        "title": "Travel Luggage",
+        "description": "Durable and spacious travel luggage for your journeys.",
+        "price": 89.99,
+        "image": "//client/public/images/travel-luggage.jpg",
+        "productId": "P10",
+        "category": "travel"
     }
 ]
   
