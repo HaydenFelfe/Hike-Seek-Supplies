@@ -1,0 +1,27 @@
+
+.navigation-bar {
+    background-color: #124122;
+    padding: 5px;
+  }
+  
+  .category-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .category-list li {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .category-list a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .category-list a:hover {
+    text-decoration: underline;
+  }
+  

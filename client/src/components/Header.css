@@ -1,0 +1,29 @@
+.header {
+    background-color: #3a7a50;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo-container {
+    padding: 10px; /* Add padding around the logo */
+  
+  }
+  
+  .logo {
+    max-width: 125px; /* Set a maximum width for the logo */
+
+ 
+  }
+  
+  .search-bar {
+    flex: .5; /* Take remaining space in the header */
+    margin: 0 10px; /* Add some margin to the search bar */
+  }
+  
+  .auth {
+    display: flex;
+    gap: 20px; /* Add some spacing between login/signup links and cart */
+  }
