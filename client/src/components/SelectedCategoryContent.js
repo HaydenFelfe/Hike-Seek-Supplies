@@ -4,8 +4,10 @@ import Hiking from './Hiking'; // Import your Hiking component (or other categor
 import Snow from './Snow';
 import Water from './Water';
 import Travel from './Travel';
-import './SelectedCategoryContent.css'
 import UsedEquipment from './UsedEquipment';
+import OnSale from './OnSale'
+import './SelectedCategoryContent.css'
+
 
 const SelectedCategoryContent = ({ selectedCategory }) => {
   return (
@@ -16,7 +18,8 @@ const SelectedCategoryContent = ({ selectedCategory }) => {
       {selectedCategory === 'snow' && <Snow />}
       {selectedCategory === 'water' && <Water />}
       {selectedCategory === 'travel' && <Travel />}
-      {selectedCategory === 'UsedEquipment' && <UsedEquipment />}
+      {selectedCategory === 'usedEquipment' && <UsedEquipment />}
+      {selectedCategory === 'onSale' && <OnSale />}
       {/* Add content for other categories similarly */}
     </div>
   );
