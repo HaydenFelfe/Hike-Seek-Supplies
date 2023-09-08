@@ -1,67 +1,120 @@
 import { gql } from '@apollo/client';
 
-export const GET_CAMPING_ITEMS = gql`
+export const GET_CAMPING_PRODUCTS = gql`
   query {
-    getCampingItems {
-      id
-      name
+    getCampingProducts {
+      _id
+      title
       description
       price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
     }
   }
 `;
 
-export const GET_HIKING_ITEMS = gql`
+export const GET_HIKING_PRODUCTS = gql`
   query {
-    getHikingItems {
-      id
-      name
+    getHikingProducts {
+      _id
+      title
       description
       price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
     }
   }
 `;
 
-export const GET_SNOW_ITEMS = gql`
-  query{
-    getSnowItems{
-      id
-      name
+export const GET_WATER_PRODUCTS = gql`
+  query {
+    getWaterProducts {
+      _id
+      title
       description
       price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
     }
   }
 `;
 
-export const GET_WATER_ITEMS = gql`
-  query{
-    getWaterItems{
-      id
-      name
-      descirption
+export const GET_SNOW_PRODUCTS = gql`
+  query {
+    getSnowProducts {
+      _id
+      title
+      description
       price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
     }
   }
 `;
 
-export const GET_TRAVEL_ITEMS = gql`
-  query{
-    getWaterItems{
-      id
-      name
-      descirption
+export const GET_TRAVEL_PRODUCTS = gql`
+  query {
+    getTravelProducts {
+      _id
+      title
+      description
       price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
     }
   }
 `;
 
-export const GET_USEDEQUIPMENT_ITEMS = gql`
-  query{
-    getWaterItems{
-      id
-      name
-      descirption
+export const GET_USED_PRODUCTS = gql`
+  query {
+    getUsedProducts {
+      _id
+      title
+      description
       price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
+    }
+  }
+`;
+
+export const GET_DISCOUNTED_PRODUCTS = gql`
+  query {
+    getDiscountedProducts {
+      _id
+      title
+      description
+      price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
     }
   }
 `;
