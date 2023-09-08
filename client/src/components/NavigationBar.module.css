@@ -1,0 +1,37 @@
+/* Styles for the navigation bar */
+.navigation-bar {
+  background-color: #124122;
+  padding: 5px;
+}
+
+.category-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.category-list li {
+  padding: 0;
+  margin: 0;
+}
+
+.category-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.category-list a:hover {
+  text-decoration: underline;
+}
+
+/* Styles for the selected category content */
+.selected-category-content {
+  /* Add your styles here to customize the appearance of the selected category content */
+  background-color: #f0f0f0; /* Example background color */
+  padding: 20px; /* Example padding */
+  border: 1px solid #ccc; /* Example border */
+  margin-top: 10px; /* Example margin */
+  border-radius: 5px; /* Example border radius */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Example box shadow */
+}

@@ -1,21 +1,31 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './NavigationBar.css'
+import React, { useState } from 'react';
+import SelectedCategoryContent from './SelectedCategoryContent'; // Import the new component
+import styles from './NavigationBar.module.css';
 
 const NavigationBar = () => {
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
-    <nav className="navigation-bar">
-      <ul className="category-list">
-        <li><Link to="/category/camping">Camping</Link></li>
-        <li><Link to="/category/hiking">Hiking</Link></li>
-        <li><Link to="/category/snow">Snow</Link></li>
-        <li><Link to="/category/water">Water</Link></li>
-        <li><Link to="/category/travel">Travel</Link></li>
-        <li><Link to="/category/used-equipment">Used Equipment</Link></li>
-        <li><Link to="/category/on-sale">On Sale</Link></li>
-      </ul>
-    </nav>
+    <div className={styles['navigation-container']}>
+      <div className={styles['navigation-bar']}>
+        <ul className={styles['category-list']}>
+          {/* Add category items with onClick handlers */}
+          <li onClick={() => handleCategoryClick('camping')}>Camping</li>
+          <li onClick={() => handleCategoryClick('hiking')}>Hiking</li>
+          <li onClick={() => handleCategoryClick('snow')}>Snow</li>
+          <li onClick={() => handleCategoryClick('water')}>Water</li>
+          <li onClick={() => handleCategoryClick('travel')}>Travel</li>
+          {/* Add other category items with similar onClick handlers */}
+        </ul>
+      </div>
+
+      {/* Use the SelectedCategoryContent component to display selected category content */}
+      <SelectedCategoryContent selectedCategory={selectedCategory} />
+    </div>
   );
 };
 

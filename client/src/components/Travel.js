@@ -1,19 +1,19 @@
 import { useQuery } from '@apollo/client';
-import { GET_CAMPING_ITEMS } from '../utils/queries';
+import { GET_TRAVEL_ITEMS } from '../utils/queries';
 
-const Camping = () => {
-  const { loading, error, data } = useQuery(GET_CAMPING_ITEMS);
+const Travel = () => {
+  const { loading, error, data } = useQuery(GET_TRAVEL_ITEMS);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  const campingItems = data.getCampingItems;
+  const travelItems = data.getTravelItems;
 
   return (
     <div>
-      <h2>Camping Items</h2>
+      <h2>Travel Items</h2>
       <ul>
-        {campingItems.map((item) => (
+        {travelItems.map((item) => (
           <li key={item.id}>
             <p>{item.name}</p>
             <p>${item.price}</p>
@@ -24,4 +24,4 @@ const Camping = () => {
   );
 };
 
-export default Camping;
+export default Travel;
