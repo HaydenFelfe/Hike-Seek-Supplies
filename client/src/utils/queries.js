@@ -118,3 +118,20 @@ export const GET_DISCOUNTED_PRODUCTS = gql`
     }
   }
 `;
+
+export const GET_ON_SALE_PRODUCTS = gql`
+  query {
+    getOnSaleProducts {
+      _id
+      title
+      description
+      price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
+    }
+  }
+`;

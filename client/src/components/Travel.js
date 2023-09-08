@@ -1,8 +1,8 @@
 import { useQuery } from '@apollo/client';
-import { GET_TRAVEL_ITEMS } from '../utils/queries';
+import { GET_TRAVEL_PRODUCTS } from '../utils/queries';
 
 const Travel = () => {
-  const { loading, error, data } = useQuery(GET_TRAVEL_ITEMS);
+  const { loading, error, data } = useQuery(GET_TRAVEL_PRODUCTS);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;

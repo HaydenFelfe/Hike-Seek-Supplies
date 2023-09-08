@@ -19,7 +19,8 @@ const NavigationBar = () => {
           <li onClick={() => handleCategoryClick('snow')}>Snow</li>
           <li onClick={() => handleCategoryClick('water')}>Water</li>
           <li onClick={() => handleCategoryClick('travel')}>Travel</li>
-          <li onClick={() => handleCategoryClick('UsedEquipment')}>Used Equipment</li>
+          <li onClick={() => handleCategoryClick('usedEquipment')}>Used Equipment</li>
+          <li onClick={() => handleCategoryClick('onSale')}>On Sale</li>
           {/* Add other category items with similar onClick handlers */}
         </ul>
       </div>

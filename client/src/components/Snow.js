@@ -1,9 +1,9 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { GET_SNOW_ITEMS } from "../utils/queries";
+import { GET_SNOW_PRODUCTS } from "../utils/queries";
 
 const Snow = () => {
-  const { loading, error, data } = useQuery(GET_SNOW_ITEMS);
+  const { loading, error, data } = useQuery(GET_SNOW_PRODUCTS);
 
   if (loading) return <p>Loadin...</p>;
   if (error) return <p>Error: {error.message}</p>;
