@@ -54,3 +54,14 @@ export const GET_TRAVEL_ITEMS = gql`
     }
   }
 `;
+
+export const GET_USEDEQUIPMENT_ITEMS = gql`
+  query{
+    getWaterItems{
+      id
+      name
+      descirption
+      price
+    }
+  }
+`;
