@@ -12,6 +12,28 @@ const resolvers = {
             }
             throw new AuthenticationError('Not logged in');
         },
+        getCampingProducts: async () => {
+            return await Product.find({ category: 'camping' });
+        },
+        getHikingProducts: async () => {
+            return await Product.find({ category: 'hiking' });
+        },
+        getWaterProducts: async () => {
+            return await Product.find({ category: 'water' });
+        },
+        getSnowProducts: async () => {
+            return await Product.find({ category: 'snow' });
+        },
+        getTravelProducts: async () => {
+            return await Product.find({ category: 'travel' });
+        },
+        getUsedProducts: async () => {
+            return await Product.find({ isUsed: true });
+        },
+        getDiscountedProducts: async () => {
+            return await Product.find({ isOnSale: true });
+        },
+
     },
 
     Mutation: {

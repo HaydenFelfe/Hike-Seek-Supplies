@@ -19,6 +19,13 @@ const typeDefs = gql`
 
     type Query {
         me: User
+        getCampingProducts: [Product]
+        getHikingProducts: [Product]
+        getWaterProducts: [Product]
+        getSnowProducts: [Product]
+        getTravelProducts: [Product]
+        getUsedProducts: [Product]
+        getDiscountedProducts: [Product]
     }
 
     type Mutation {
