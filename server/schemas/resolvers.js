@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Product } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -11,6 +11,9 @@ const resolvers = {
                 return userData;
             }
             throw new AuthenticationError('Not logged in');
+        },
+        getAllProducts: async () => {
+            return await Product.find();
         },
         getCampingProducts: async () => {
             return await Product.find({ category: 'camping' });
@@ -33,7 +36,15 @@ const resolvers = {
         getDiscountedProducts: async () => {
             return await Product.find({ isOnSale: true });
         },
-
+        getUserCart: async (parent, args, context) => {
+            if (!context.user) {
+                throw new AuthenticationError('Not logged in');
+            }
+    
+            const userData = await User.findById(context.user._id).populate('cart');
+    
+            return userData.cart;
+        },
     },
 
     Mutation: {
@@ -71,7 +82,7 @@ const resolvers = {
                     { new: true }
                 ).populate('cart');
 
-                return updatedUser;
+                return updatedUser.cart;
             } catch (error) {
                 console.error('Error adding to cart:', error);
                 throw new Error('Unable to add to cart');
@@ -89,7 +100,7 @@ const resolvers = {
                     { new: true }
                 ).populate('cart');
 
-                return updatedUser;
+                return updatedUser.cart;
             } catch (error) {
                 console.error('Error removing from cart:', error);
                 throw new Error('Unable to remove from cart');
