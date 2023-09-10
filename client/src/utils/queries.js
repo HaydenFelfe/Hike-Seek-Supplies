@@ -13,6 +13,10 @@ export const GET_CAMPING_PRODUCTS = gql`
       isUsed
       isOnSale
       discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
     }
   }
 `;
@@ -30,6 +34,10 @@ export const GET_HIKING_PRODUCTS = gql`
       isUsed
       isOnSale
       discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
     }
   }
 `;
@@ -47,6 +55,10 @@ export const GET_WATER_PRODUCTS = gql`
       isUsed
       isOnSale
       discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
     }
   }
 `;
@@ -64,6 +76,10 @@ export const GET_SNOW_PRODUCTS = gql`
       isUsed
       isOnSale
       discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
     }
   }
 `;
@@ -81,6 +97,10 @@ export const GET_TRAVEL_PRODUCTS = gql`
       isUsed
       isOnSale
       discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
     }
   }
 `;
@@ -98,6 +118,10 @@ export const GET_USED_PRODUCTS = gql`
       isUsed
       isOnSale
       discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
     }
   }
 `;
@@ -115,6 +139,52 @@ export const GET_DISCOUNTED_PRODUCTS = gql`
       isUsed
       isOnSale
       discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
+    }
+  }
+`;
+
+export const GET_PRODUCT_BY_SLUG = gql`
+  query GetProductBySlug($slug: String!) {
+    getProductBySlug(slug: $slug) {
+      _id
+      title
+      description
+      price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
+    }
+  }
+`;
+
+export const GET_ALL_PRODUCTS = gql`
+  query {
+    getAllProducts {
+      _id
+      title
+      description
+      price
+      image
+      productId
+      category
+      isUsed
+      isOnSale
+      discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
     }
   }
 `;
