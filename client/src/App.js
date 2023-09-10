@@ -1,13 +1,21 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ApolloClient from './apollo-client'; // Import your configured Apollo Client
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ApolloClient from './apollo-client';
 import Header from './components/Header';
 import NavigationBar from './components/NavigationBar';
-// import Camping from './components/Camping'; // Import your component for displaying Camping items
-// import Hiking from './components/Hiking'; // Import your component for displaying Hiking items (if applicable)
-// import Snow from './components/Snow'; // Import your component for displaying Snow items (if applicable)
-// ... Import other components for different categories
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Camping from './pages/Camping';
+import Hiking from './pages/Hiking';
+import Snow from './pages/Snow';
+import Water from './pages/Water';
+import Travel from './pages/Travel';
+import Used from './pages/Used';
+import Deals from './pages/Deals';
+import ProductPage from './pages/ProductPage';
+import HomePage from './pages/HomePage';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -16,15 +24,22 @@ function App() {
         <div>
           <Header />
           <NavigationBar />
-          {/* <Switch> */}
-            {/* <Route path="/category/camping" component={Camping} />
-            <Route path="/category/hiking" component={Hiking} />
-            <Route path="/category/snow" component={Snow} /> */}
-            {/* Add routes for other categories */}
-            {/* <Route path="/" exact> */}
-              {/* Home or default page */}
-            {/* </Route> */}
-          {/* </Switch> */}
+
+          <Routes>
+            <Route path="/" element={<HomePage />} />{' '}
+            {/* Render HomePage for the root route */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/camping" element={<Camping />} />
+            <Route path="/hiking" element={<Hiking />} />
+            <Route path="/snow" element={<Snow />} />
+            <Route path="/water" element={<Water />} />
+            <Route path="/travel" element={<Travel />} />
+            <Route path="/used" element={<Used />} />
+            <Route path="/deals" element={<Deals />} />
+            <Route path="/product/:slug" element={<ProductPage />} />
+          </Routes>
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>

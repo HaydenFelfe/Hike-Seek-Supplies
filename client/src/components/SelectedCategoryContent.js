@@ -1,13 +1,12 @@
 import React from 'react';
-import Camping from './Camping'; // Import your Camping component
-import Hiking from './Hiking'; // Import your Hiking component (or other category components)
-import Snow from './Snow';
-import Water from './Water';
-import Travel from './Travel';
-import UsedEquipment from './UsedEquipment';
-import OnSale from './OnSale'
-import './SelectedCategoryContent.css'
-
+import Camping from '../pages/Camping'; // Import your Camping component
+import Hiking from '../pages/Hiking'; // Import your Hiking component (or other category components)
+import Snow from '../pages/Snow';
+import Water from '../pages/Water';
+import Travel from '../pages/Travel';
+import Used from '../pages/Used';
+import Deals from '../pages/Deals';
+import './SelectedCategoryContent.css';
 
 const SelectedCategoryContent = ({ selectedCategory }) => {
   return (
@@ -18,8 +17,8 @@ const SelectedCategoryContent = ({ selectedCategory }) => {
       {selectedCategory === 'snow' && <Snow />}
       {selectedCategory === 'water' && <Water />}
       {selectedCategory === 'travel' && <Travel />}
-      {selectedCategory === 'usedEquipment' && <UsedEquipment />}
-      {selectedCategory === 'onSale' && <OnSale />}
+      {selectedCategory === 'used' && <Used />}
+      {selectedCategory === 'deals' && <Deals />}
       {/* Add content for other categories similarly */}
     </div>
   );
