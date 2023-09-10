@@ -1,93 +1,129 @@
 [
-    {
-      "title": "Camping Tent",
-      "description": "A spacious camping tent for your outdoor adventures.",
-      "price": 199.99,
-      "image": "//client/public/images/camping-tent.jpg",
-      "productId": "P1",
-      "category": "camping",
-      "isOnSale": true,
-      "discountPercentage": 20
-    },
-    {
-      "title": "Hiking Backpack",
-      "description": "A lightweight backpack for your hiking trips.",
-      "price": 79.99,
-      "image": "//client/public/images/hiking-backpack.jpg",
-      "productId": "P2",
-      "category": "hiking"
-    },
-    {
-      "title": "Used Snowboard",
-      "description": "A high-quality used snowboard for winter sports enthusiasts.",
-      "price": 149.99,
-      "image": "//client/public/images/used-snowboard.jpg",
-      "productId": "P3",
-      "category": "snow",
-      "isUsed": true,
-      "isOnSale": true,
-      "discountPercentage": 15
-    },
-    {
-      "title": "Waterproof Kayak",
-      "description": "A durable kayak for water adventures.",
-      "price": 299.99,
-      "image": "//client/public/images/kayak.jpg",
-      "productId": "P4",
-      "category": "water"
-    },
-    {
-      "title": "Travel Pillow",
-      "description": "A comfortable pillow for frequent travelers.",
-      "price": 49.99,
-      "image": "//client/public/images/travel-pillow.jpg",
-      "productId": "P5",
-      "category": "travel"
-    },
-    {
-        "title": "Camping Chair",
-        "description": "A portal camping chair for avid campers.",
-        "price": 44.99,
-        "image": "//client/public/images/camping-chair.jpg",
-        "productId": "P6",
-        "category": "camping"
-    },
-    {
-        "title": "Hiking Pole",
-        "description": "A sturdy hiking pole for your outdoor expeditions.",
-        "price": 109.99,
-        "image": "//client/public/images/hiking-pole.jpg",
-        "productId": "P7",
-        "category": "hiking",
-        "isUsed": true,
-        "isOnSale": true,
-        "discountPercentage": 50
-    },
-    {
-        "title": "Snow Pants",
-        "description": "Warm and waterproof snow pants for cold weather.",
-        "price": 59.99,
-        "image": "//client/public/images/snow-pants.jpg",
-        "productId": "P8",
-        "category": "snow",
-        "isOnSale": true,
-        "discountPercentage": 10
-    },
-    {
-        "title": "Unicorn Pool Floaty",
-        "description": "A fun unicorn-themed pool floaty for a day at the pool.",
-        "price": 29.99,
-        "image": "//client/public/images/unicorn-pool-float.jpg",
-        "productId": "P9",
-        "category": "water"
-    },
-    {
-        "title": "Travel Luggage",
-        "description": "Durable and spacious travel luggage for your journeys.",
-        "price": 89.99,
-        "image": "//client/public/images/travel-luggage.jpg",
-        "productId": "P10",
-        "category": "travel"
-    }
+  {
+    "title": "Camping Tent",
+    "description": "A spacious camping tent for your outdoor adventures.",
+    "price": 199.99,
+    "image": "/images/camping-tent.jpg",
+    "productId": "P1",
+    "category": "camping",
+    "isOnSale": true,
+    "discountPercentage": 20,
+    "slug": "camping-tent",
+    "countInStock": 7,
+    "rating": 4.5,
+    "numReviews": 15
+  },
+  {
+    "title": "Hiking Backpack",
+    "description": "A lightweight backpack for your hiking trips.",
+    "price": 79.99,
+    "image": "/images/hiking-backpack.jpg",
+    "productId": "P2",
+    "category": "hiking",
+    "slug": "hiking-backpack",
+    "countInStock": 12,
+    "rating": 3.5,
+    "numReviews": 9
+  },
+  {
+    "title": "Used Snowboard",
+    "description": "A high-quality used snowboard for winter sports enthusiasts.",
+    "price": 149.99,
+    "image": "/images/used-snowboard.jpg",
+    "productId": "P3",
+    "category": "snow",
+    "isUsed": true,
+    "isOnSale": true,
+    "discountPercentage": 15,
+    "slug": "used-snowboard",
+    "countInStock": 0,
+    "rating": 4,
+    "numReviews": 25
+  },
+  {
+    "title": "Waterproof Kayak",
+    "description": "A durable kayak for water adventures.",
+    "price": 299.99,
+    "image": "/images/kayak.jpg",
+    "productId": "P4",
+    "category": "water",
+    "slug": "waterproof-kayak",
+    "countInStock": 8,
+    "rating": 2.5,
+    "numReviews": 12
+  },
+  {
+    "title": "Travel Pillow",
+    "description": "A comfortable pillow for frequent travelers.",
+    "price": 49.99,
+    "image": "/images/travel-pillow.jpg",
+    "productId": "P5",
+    "category": "travel",
+    "slug": "travel-pillow",
+    "countInStock": 19,
+    "rating": 3,
+    "numReviews": 7
+  },
+  {
+    "title": "Camping Chair",
+    "description": "A portable camping chair for avid campers.",
+    "price": 44.99,
+    "image": "/images/camping-chair.jpg",
+    "productId": "P6",
+    "category": "camping",
+    "slug": "camping-chair",
+    "countInStock": 5,
+    "rating": 4,
+    "numReviews": 18
+  },
+  {
+    "title": "Hiking Pole",
+    "description": "A sturdy hiking pole for your outdoor expeditions.",
+    "price": 109.99,
+    "image": "/images/hiking-pole.jpg",
+    "productId": "P7",
+    "category": "hiking",
+    "slug": "hiking-pole",
+    "countInStock": 15,
+    "rating": 4.5,
+    "numReviews": 22
+  },
+  {
+    "title": "Snow Pants",
+    "description": "Warm and waterproof snow pants for cold weather.",
+    "price": 59.99,
+    "image": "/images/snow-pants.jpg",
+    "productId": "P8",
+    "category": "snow",
+    "isOnSale": true,
+    "discountPercentage": 10,
+    "slug": "snow-pants",
+    "countInStock": 10,
+    "rating": 2,
+    "numReviews": 4
+  },
+  {
+    "title": "Unicorn Pool Floaty",
+    "description": "A fun unicorn-themed pool floaty for a day at the pool.",
+    "price": 29.99,
+    "image": "/images/unicorn-pool-float.jpg",
+    "productId": "P9",
+    "category": "water",
+    "slug": "unicorn-pool-floaty",
+    "countInStock": 3,
+    "rating": 3.5,
+    "numReviews": 14
+  },
+  {
+    "title": "Travel Luggage",
+    "description": "Durable and spacious travel luggage for your journeys.",
+    "price": 89.99,
+    "image": "/images/travel-luggage.jpg",
+    "productId": "P10",
+    "category": "travel",
+    "slug": "travel-luggage",
+    "countInStock": 14,
+    "rating": 1.5,
+    "numReviews": 30
+  }
 ]
-  
