@@ -208,3 +208,29 @@ export const SEARCH_PRODUCTS_QUERY = gql`
     }
   }
 `;
+
+export const GET_USER_CART = gql`
+  query {
+    getUserCart {
+      _id
+      username
+      email
+      cart {
+        _id
+        title
+        slug
+        description
+        price
+        image
+        productId
+        category
+        isUsed
+        isOnSale
+        discountPercentage
+        countInStock
+        rating
+        numReviews
+      }
+    }
+  }
+`;

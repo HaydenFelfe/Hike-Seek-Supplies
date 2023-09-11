@@ -1,39 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap'; // Import the Button component
 import Logo from './Logo';
-import Search from "./SearchInput"; 
-import './Header.css'; // Import the CSS file
+import Search from './SearchInput';
+import AuthService from '../utils/auth';
+import './Header.css';
 
 const Header = () => {
-  const loggedIn = false; // Placeholder for user authentication state and functions
-  const logout = () => {}; // Placeholder for logout function
+  const loggedIn = AuthService.loggedIn();
+
+  const logout = () => {
+    AuthService.logout();
+    // You can also perform any other client-side cleanup here
+  };
 
   return (
-    <header className="header"> {/* Apply the 'header' class to the header element */}
-      <div className="logo-container"> {/* Apply the 'logo-container' class */}
+    <header className="header">
+      <div className="logo-container">
         <Link to="/">
-          <Logo className="logo" /> {/* Apply the 'logo' class */}
+          <Logo className="logo" />
         </Link>
       </div>
 
- 
       <Search />
 
       <div className="auth">
         {loggedIn ? (
           <>
-            <Link to="/cart" className="cart">
-              {/* Add cart icon or count here */}
+            <Link to="/cart">
+              <Button variant="info">Cart</Button>
             </Link>
-            <Link to="/profile" className="profile">
-              Profile
-            </Link>
-            <button onClick={logout}>Logout</button>
+            <Button variant="info" onClick={logout}>
+              Logout
+            </Button>
           </>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/login">
+              <Button variant="info">Login</Button>
+            </Link>
+            <Link to="/signup">
+              <Button variant="info">Sign Up</Button>
+            </Link>
           </>
         )}
       </div>

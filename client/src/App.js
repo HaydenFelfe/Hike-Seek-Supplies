@@ -16,7 +16,8 @@ import Used from './pages/Used';
 import Deals from './pages/Deals';
 import ProductPage from './pages/ProductPage';
 import HomePage from './pages/HomePage';
-import SearchResults from './pages/SearchResults'; // Import your SearchResults component
+import SearchResults from './pages/SearchResults';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/camping" element={<Camping />} />
             <Route path="/hiking" element={<Hiking />} />
             <Route path="/snow" element={<Snow />} />

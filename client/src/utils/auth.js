@@ -36,6 +36,8 @@ class AuthService {
     localStorage.removeItem('id_token');
     window.location.reload();
   }
+
+  static instance = new AuthService();
 }
 
-export default new AuthService();
+export default AuthService.instance;
