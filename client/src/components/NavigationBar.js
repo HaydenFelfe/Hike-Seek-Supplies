@@ -1,12 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './NavigationBar.module.css';
+import { useState, useEffect } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./NavigationBar.module.css";
 
 const NavigationBar = () => {
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const threshold = 60;
+
+      setIsNavbarFixed(scrollY > threshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const fixedNavbarClass = isNavbarFixed ? styles["fixed-navigation-bar"] : "";
   return (
-    <div className={styles['navigation-container']}>
-      <div className={styles['navigation-bar']}>
-        <ul className={styles['category-list']}>
+    <div className={`${styles["navigation-container"]} ${fixedNavbarClass}`}>
+      <div className={styles["navigation-bar"]}>
+        <ul className={styles["category-list"]}>
           <li>
             <Link to="/">All</Link>
           </li>
