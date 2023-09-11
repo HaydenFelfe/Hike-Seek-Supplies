@@ -2,20 +2,21 @@
 .navigation-bar {
   background-color: #124122;
   padding: 5px;
+  border: 3px solid black;
 }
 .fixed-navigation-bar {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100; /* Adjust the z-index as needed */
-  /* Add any other styles for the fixed navigation bar */
+  z-index: 100;
 }
 
 .category-list {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 35px;
+  margin-top: 10px;
 }
 
 .category-list li {

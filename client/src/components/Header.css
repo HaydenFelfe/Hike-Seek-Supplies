@@ -5,8 +5,33 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 75px;
   }
   
+  /* header.css */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1; /* Allow the input to grow and take available space */
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: -33px; /* Adjust the margin as needed to position the button */
+}
+
+
+
   .logo-container {
     padding: 10px; /* Add padding around the logo */
   
@@ -16,6 +41,10 @@
     max-width: 125px; /* Set a maximum width for the logo */
 
  
+  }
+  .search-icon {
+    width: 29px; /* Adjust the width as needed */
+    height: 23px; /* Adjust the height as needed */
   }
   
   .search-bar {

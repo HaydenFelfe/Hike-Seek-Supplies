@@ -1,15 +1,10 @@
-import { useState, useEffect } from "react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavigationBar.module.css";
 
-const NavigationBar = () => {
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
 
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-  };
+const NavigationBar = () => {
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,6 +50,8 @@ const NavigationBar = () => {
           <li>
             <Link to="/deals">Deals</Link>
           </li>
+          {/* Include the Search component */}
+         
           {/* Add other category links */}
         </ul>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import Search from "./SearchInput"; 
 import './Header.css'; // Import the CSS file
 
 const Header = () => {
@@ -15,7 +16,8 @@ const Header = () => {
         </Link>
       </div>
 
-      <input type="text" placeholder="Search" className="search-bar" />
+ 
+      <Search />
 
       <div className="auth">
         {loggedIn ? (
