@@ -37,6 +37,8 @@ const typeDefs = gql`
     getDiscountedProducts: [Product]
     getUserCart: [Product]
     getProductBySlug(slug: String!): Product
+    
+    searchProducts(query: String!): [Product]
   }
 
   type Mutation {

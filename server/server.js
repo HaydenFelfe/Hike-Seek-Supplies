@@ -1,10 +1,10 @@
-const express = require('express');
+// Import necessary modules at the top of your file
 const { ApolloServer } = require('apollo-server-express');
-const path = require('path');
 const { authMiddleware } = require('./utils/auth');
-
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
+const express = require('express');
+const path = require('path');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -12,6 +12,27 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
+  formatError: (error) => {
+    // Log GraphQL errors to the console
+    console.error(error);
+
+    // You can also log errors to a file or a logging service
+    // Example: logErrorToService(error);
+
+    return error;
+  },
+});
+
+// Middleware to extract the 'q' parameter from the URL
+app.use((req, res, next) => {
+  // Extract the 'q' parameter from the URL query string
+  const searchQuery = req.query.q;
+
+  // Store the 'searchQuery' in the request object
+  req.searchQuery = searchQuery;
+
+  // Continue processing the request
+  next();
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -24,10 +45,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
   });
 }
-
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../client'));
-// })
 
 const startApolloServer = async () => {
   await server.start();

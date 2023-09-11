@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ApolloClient from './apollo-client';
 import Header from './components/Header';
 import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Camping from './pages/Camping';
@@ -15,7 +16,7 @@ import Used from './pages/Used';
 import Deals from './pages/Deals';
 import ProductPage from './pages/ProductPage';
 import HomePage from './pages/HomePage';
-import Footer from './components/Footer';
+import SearchResults from './pages/SearchResults'; // Import your SearchResults component
 
 function App() {
   return (
@@ -26,8 +27,7 @@ function App() {
           <NavigationBar />
 
           <Routes>
-            <Route path="/" element={<HomePage />} />{' '}
-            {/* Render HomePage for the root route */}
+            <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/camping" element={<Camping />} />
@@ -38,6 +38,9 @@ function App() {
             <Route path="/used" element={<Used />} />
             <Route path="/deals" element={<Deals />} />
             <Route path="/product/:slug" element={<ProductPage />} />
+
+            {/* Add a route for search results */}
+            <Route path="/search" element={<SearchResults />} />
           </Routes>
           <Footer />
         </div>

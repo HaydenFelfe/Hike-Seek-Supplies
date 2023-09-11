@@ -56,7 +56,30 @@ const resolvers = {
         throw new Error('Unable to fetch product by slug');
       }
     },
-  },
+    searchProducts: async (parent, { query }, context) => {
+        try {
+          console.log(`Searching for products with query: ${query}`);
+      
+          // Use Mongoose to search for products based on the query
+          // We'll search for products that match the 'title' or 'description' fields
+          const searchResults = await Product.find({
+            $or: [
+              { title: { $regex: query, $options: 'i' } }, // Case-insensitive search for 'title'
+              { description: { $regex: query, $options: 'i' } }, // Case-insensitive search for 'description'
+            ],
+          });
+      
+          console.log(`Found ${searchResults.length} results.`);
+      
+          return searchResults;
+        } catch (error) {
+          console.error('Error searching for products:', error);
+          throw new Error('Unable to search for products');
+        }
+      },
+    },
+  
+  
 
   Mutation: {
     addUser: async (parent, args) => {
@@ -66,7 +89,7 @@ const resolvers = {
       return { token, user };
     },
     login: async (parent, { email, password }) => {
-      const user = await user.findOne({ email });
+      const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');

@@ -188,3 +188,23 @@ export const GET_ALL_PRODUCTS = gql`
     }
   }
 `;
+
+export const SEARCH_PRODUCTS_QUERY = gql`
+  query SearchProducts($query: String!) {
+    searchProducts(query: $query) {
+      _id
+      title
+      description
+      price
+      image
+      category
+      isUsed
+      isOnSale
+      discountPercentage
+      rating
+      numReviews
+      countInStock
+      slug
+    }
+  }
+`;
