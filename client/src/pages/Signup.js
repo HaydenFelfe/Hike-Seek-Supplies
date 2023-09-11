@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useNavigate } from 'react-router-dom';
+import AuthService from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -14,6 +16,8 @@ const Signup = () => {
     password: '',
   });
   const [addUser, { error }] = useMutation(ADD_USER);
+  const [signupSuccess, setSignupSuccess] = useState(false); // State to manage signup success message
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,12 +33,19 @@ const Signup = () => {
       const { data } = await addUser({
         variables: { ...formState },
       });
-      // Handle successful signup, e.g., store token in local storage
-      console.log(data);
+      AuthService.login(data.addUser.token);
+      setSignupSuccess(true); // Set signup success message to true
+      setTimeout(() => {
+        navigate('/cart'); // Redirect to /cart after a delay
+      }, 2000); // Adjust the delay time as needed
     } catch (err) {
       console.error(err);
     }
   };
+  if (AuthService.loggedIn()) {
+    navigate('/cart'); // Use useNavigate to navigate to /cart
+    return null; // Return null to prevent rendering the signup form
+  }
 
   return (
     <Container className="signup-container">
@@ -45,6 +56,8 @@ const Signup = () => {
           <div className="text-center">
             <h2>Sign Up</h2>
           </div>
+          {signupSuccess && <p>Signup successful!</p>}{' '}
+          {/* Render success message */}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formUsername">
               <Form.Label>Username:</Form.Label>
@@ -83,7 +96,6 @@ const Signup = () => {
               </Button>
             </div>
           </Form>
-
           {error && <p>{error.message}</p>}
         </Col>
       </Row>

@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import AuthService from '../utils/auth';
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -25,8 +26,7 @@ const Login = () => {
       const { data } = await loginUser({
         variables: { ...formState },
       });
-      // Handle successful login, e.g., store token in local storage
-      console.log(data);
+      AuthService.login(data.login.token); // Store token and redirect
     } catch (err) {
       console.error(err);
     }
