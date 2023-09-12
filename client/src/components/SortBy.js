@@ -20,13 +20,12 @@ const SortBy = ({ onSortChange }) => {
   return (
     <div className="sort-by">
       <Form.Group controlId="sortDropdown">
-        <Form.Label>Sort by:</Form.Label>
         <Dropdown onSelect={handleSortChange}>
           <Dropdown.Toggle variant="primary" id="sortDropdown">
             {selectedOption ? (
               <span>Sort by: {eventKeyToText[selectedOption]}</span>
             ) : (
-              <span>Select Sorting Option</span>
+              <span>Sort by: Select Sorting Option</span>
             )}
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -34,7 +33,7 @@ const SortBy = ({ onSortChange }) => {
             <Dropdown.Item eventKey="price-desc">Most Expensive</Dropdown.Item>
             <Dropdown.Item eventKey="rating-desc">Rating</Dropdown.Item>
             <Dropdown.Item eventKey="numReviews-desc">
-              Most Reviews
+              Most Reviewed
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
