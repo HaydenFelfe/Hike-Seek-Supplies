@@ -1,8 +1,8 @@
 /* Styles for the navigation bar */
 .navigation-bar {
-  background-color: #124122;
+  background-color: #668362;
   padding: 5px;
-  border: 3px solid black;
+  border: 3px solid rgb(59, 61, 58);
 }
 .fixed-navigation-bar {
   position: fixed;

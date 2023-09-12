@@ -29,7 +29,7 @@ const Camping = () => {
 
   return (
     <div>
-      <h2>Camping Items</h2>
+      <h2>Camping Products</h2>
       <div style={{ marginLeft: '15px' }}>
         {' '}
         {/* Add inline style for left margin */}

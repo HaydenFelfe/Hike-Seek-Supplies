@@ -1,0 +1,80 @@
+.sort-by {
+    /* Position the element relative to the viewport */
+    position: fixed; /* Use fixed positioning */
+    top: 210px; /* Adjust the top distance as needed */
+    right: 20px; /* Adjust the right distance as needed */
+    z-index: 999; /* Set a high z-index to ensure it appears above other content */
+  }
+  .sort-by.scrolling {
+    /* Change styles when scrolling */
+    display: none; /* Adjust the desired position after scrolling */
+  }
+  .dropdown-menu {
+    background-color: #fff; /* Set the background color */
+    border: 1px solid #ccc; /* Add a border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  }
+  
+  /* Style the dropdown items */
+  .dropdown-item {
+    color: #333; /* Set the text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover state for dropdown items */
+  .dropdown-item:hover {
+    background-color: #f8f8f8; /* Change background color on hover */
+    color: #000; /* Change text color on hover */
+  }
+
+  .dropdown-toggle:focus,
+  .dropdown-toggle:active {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .btn-primary {
+    /* Change the background color for .btn-primary */
+    --bs-btn-bg: #668362;
+
+    --bs-btn-border-color: #000; /* Black color code */
+
+    /* Set the border width to 3px */
+    --bs-btn-border-width: 3px;
+    
+    /* Change the focus state color and shadow */
+    --bs-btn-focus-shadow-rgb: red;
+  
+    /* Change the active state color and background */
+    --bs-btn-active-color: black;
+    --bs-btn-active-bg: #668362;
+    --bs-btn-active-border-color: black; 
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
+  .dropdown-menu {
+    background-color: #668362; /* Set the background color */
+    color: black; /* Set the text color */
+    border: 3px solid black; /* Set the border color */
+   
+  }
+  .custom-dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+  
+  /* Style the dropdown menu items */
+  .dropdown-item {
+    color: black; /* Set the text color for menu items */
+    background-color: your-item-bg-color; /* Set the background color for menu items */
+    padding: your-item-padding; /* Adjust padding as needed */
+  }
+  
+  /* Hover state for dropdown menu items */
+  .dropdown-item:hover {
+    background-color: your-item-hover-bg-color; /* Change background color on hover */
+    color: your-item-hover-text-color; /* Change text color on hover */
+  }

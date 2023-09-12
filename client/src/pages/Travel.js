@@ -28,7 +28,7 @@ const Travel = () => {
 
   return (
     <div>
-      <h2>Travel Items</h2>
+      <h2>Travel Products</h2>
       <div style={{ marginLeft: '15px' }}>
         <SortBy onSortChange={handleSortChange} />
       </div>

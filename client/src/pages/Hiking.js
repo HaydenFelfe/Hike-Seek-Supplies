@@ -28,7 +28,7 @@ const Hiking = () => {
 
   return (
     <div>
-      <h2>Hiking Items</h2>
+      <h2>Hiking Products</h2>
       <div style={{ marginLeft: '15px' }}>
         <SortBy onSortChange={handleSortChange} />
       </div>

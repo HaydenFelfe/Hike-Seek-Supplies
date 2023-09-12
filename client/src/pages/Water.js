@@ -28,7 +28,7 @@ const Water = () => {
 
   return (
     <div>
-      <h2>Water Items</h2>
+      <h2>Water Products</h2>
       <div style={{ marginLeft: '15px' }}>
         <SortBy onSortChange={handleSortChange} />
       </div>
