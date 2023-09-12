@@ -47,6 +47,12 @@ color: black;
 text-decoration: none;
 /* Add other styles as needed */
 }
+.cart-button {
+  color: black;
+  text-decoration: none;
+  /* Add other styles as needed */
+  }
+  
 
 
 .login-icon {
@@ -58,9 +64,26 @@ margin-right: 8px; /* Adjust the margin as needed to control spacing */
 .signup-icon {
 width: 26px; /* Set the width as desired */
 height: 27px; /* Set the height as desired */
-margin-bottom: 1.3px /* Adjust the margin as needed to control spacing */
+margin-bottom: 1.3px; /* Adjust the margin as needed to control spacing */
 /* Add other styles as needed */
 }
+
+.cart-icon {
+
+    width: 20px; /* Set the width as desired */
+    height: 20px; /* Set the height as desired */
+    margin-right: 5px; /* Adjust the margin as needed to control spacing */
+    /* Add other styles as needed */
+    
+}
+
+.logout-icon {
+  width: 20px; /* Set the width as desired */
+  height: 21px; /* Set the height as desired */
+  margin-bottom: 1.3px; /* Adjust the margin as needed to control spacing */
+  margin-right: 5px;
+  /* Add other styles as needed */
+  }
 .logo-container {
   padding: 10px; /* Add padding around the logo */
 
