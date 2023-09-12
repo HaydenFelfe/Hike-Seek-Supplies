@@ -18,6 +18,10 @@ const OnSaleNow = () => {
     }
   }, [loading, error, data]);
 
+  useEffect(() => {
+    document.title = 'Deals';
+  }, []);
+
   // Function to handle sorting
   const handleSortChange = (selectedOption) => {
     setSortByOption(selectedOption);

@@ -1,46 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Rating from './Rating'; // Import the Rating component
 import './ProductBox.css'; // Import your custom CSS
+import { useMutation } from '@apollo/client';
+import { ADD_TO_CART } from '../utils/mutations';
+import AuthService from '../utils/auth';
 
 const ProductBox = ({
   title,
   price,
   description,
   image,
-  rating, // Ensure that the rating is a valid number
+  rating,
   numReviews,
   slug,
-  isOnSale, // Add isOnSale prop to determine if the product is on sale
-  discountPercentage, // Add discountPercentage prop to get the discount percentage
+  isOnSale,
+  discountPercentage,
+  productId,
 }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [addToCart] = useMutation(ADD_TO_CART);
+
   const handleAddToCart = () => {
-    // Implement the logic to add the product to the cart here
-    // For now, you can simply display a message
-    alert(`Added ${title} to the cart`);
+    if (isLoggedIn) {
+      addToCart({
+        variables: {
+          productId: productId,
+        },
+      })
+        .then(() => {
+          alert(`Added ${title} to the cart`);
+        })
+        .catch((error) => {
+          console.error('Error adding to cart:', error);
+          alert('Error adding to cart. Please try again.');
+        });
+    } else {
+      alert('Must be logged in to add to cart');
+    }
   };
+
+  useState(() => {
+    setIsLoggedIn(AuthService.loggedIn());
+  }, []);
 
   const renderPrice = () => {
     if (isOnSale) {
       const discountedPrice = (price * (100 - discountPercentage)) / 100;
-      const formattedDiscountedPrice = discountedPrice.toFixed(2); // Limit to two decimal places
+      const formattedDiscountedPrice = discountedPrice.toFixed(2);
       return (
         <>
           <span className="original-price original-price-crossed">
             ${price}
           </span>
-          &nbsp; {/* Add a space character */}
+          &nbsp;
           <span className="discounted-price">${formattedDiscountedPrice}</span>
         </>
       );
     } else {
-      return (
-        <span className="product-price">
-          ${price.toFixed(2)} {/* Limit to two decimal places */}
-        </span>
-      );
+      return <span className="product-price">${price.toFixed(2)}</span>;
     }
   };
 
@@ -60,13 +80,10 @@ const ProductBox = ({
             {title}
           </Link>
           <div className="d-flex justify-content-center align-items-center">
-            {/* Center the content horizontally and vertically */}
             <Rating rating={parseFloat(rating)} numReviews={numReviews} />
-            {/* Ensure rating is a valid number */}
           </div>
           <Card.Text className="product-description">{description}</Card.Text>
           <div className="product-price">{renderPrice()}</div>
-          {/* Add a cart button */}
           <Button
             onClick={handleAddToCart}
             className="btn-primary product-button"

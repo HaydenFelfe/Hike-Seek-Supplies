@@ -22,6 +22,10 @@ const Snow = () => {
     setSortByOption(selectedOption);
   };
 
+  useEffect(() => {
+    document.title = 'Snow';
+  }, []);
+
   return (
     <div>
       <h2>Snow Items</h2>
