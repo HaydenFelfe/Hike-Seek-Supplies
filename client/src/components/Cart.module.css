@@ -1,0 +1,56 @@
+.cart-container {
+  display: flex;
+  flex-direction: column; /* Stack flex items vertically within .cart-container */
+  align-items: center; /* Align flex items horizontally within .cart-container */
+}
+
+.cart-container .cart-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center; /* Center text horizontally within .cart-title */
+}
+
+.cart-container .empty-cart-message {
+  font-size: 18px;
+  padding-top: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center; /* Center text horizontally within .empty-cart-message */
+}
+
+.cart-container .go-shopping-link {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin-bottom: 30px;
+  margin-top: 25px;
+  color: #000000;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+ 
+
+}
+
+.cart-container .go-shopping-link:hover {
+  background-color: #3a7a50;
+}
+
+.cart-container .shopping-icon {
+  width: 16px; /* Set the width as desired */
+  height: 16px; /* Set the height as desired */
+  margin-right: 8px; /* Adjust the margin as needed to control spacing */
+  margin-bottom: 3px;
+}
+
+.shopping-link {
+  color: black;
+  text-decoration: none;
+  padding-bottom: 30px;
+  }
+
+/* Define the hover effect for .go-shopping-link */
+.cart-container .go-shopping-link:hover {
+  color: white; /* Hover color (a lighter shade of black) */
+}
