@@ -18,6 +18,10 @@ const Water = () => {
     }
   }, [loading, error, data]);
 
+  useEffect(() => {
+    document.title = 'Water';
+  }, []);
+
   const handleSortChange = (selectedOption) => {
     setSortByOption(selectedOption);
   };

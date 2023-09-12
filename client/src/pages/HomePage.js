@@ -22,6 +22,10 @@ const HomePage = () => {
     setSortByOption(selectedOption);
   };
 
+  useEffect(() => {
+    document.title = 'Hike & Seek Supplies';
+  }, []);
+
   return (
     <div className="container-fluid">
       <h2>Featured Products</h2>

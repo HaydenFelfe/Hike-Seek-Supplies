@@ -22,6 +22,10 @@ const Travel = () => {
     setSortByOption(selectedOption);
   };
 
+  useEffect(() => {
+    document.title = 'Travel';
+  }, []);
+
   return (
     <div>
       <h2>Travel Products</h2>

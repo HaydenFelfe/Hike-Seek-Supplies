@@ -23,6 +23,10 @@ const UsedEquipment = () => {
     setSortByOption(selectedOption);
   };
 
+  useEffect(() => {
+    document.title = 'Used';
+  }, []);
+
   return (
     <div>
       <h2>Used Products</h2>

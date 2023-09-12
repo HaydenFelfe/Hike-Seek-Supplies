@@ -23,6 +23,10 @@ const Camping = () => {
     setSortByOption(selectedOption);
   };
 
+  useEffect(() => {
+    document.title = 'Camping';
+  }, []);
+
   return (
     <div>
       <h2>Camping Products</h2>
