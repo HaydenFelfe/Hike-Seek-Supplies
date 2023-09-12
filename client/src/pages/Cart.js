@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_USER_CART } from '../utils/queries';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { loading, data } = useQuery(GET_USER_CART);
+
+  useEffect(() => {
+    document.title = 'Cart';
+  }, []);
 
   if (loading) return <p>Loading...</p>;
 

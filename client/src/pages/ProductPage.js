@@ -19,14 +19,17 @@ const ProductPage = () => {
   });
 
   useEffect(() => {
-    // You can add additional logic here if needed
-  }, [slug]);
+    // Set the document title to use the product's slug
+    if (!loading && !error && data) {
+      const product = data.getProductBySlug;
+      document.title = product.slug;
+    }
+  }, [loading, error, data]);
 
   if (loading) return <LoadingBox />;
   if (error) return <MessageBox variant="danger">{error.message}</MessageBox>;
 
   const product = data.getProductBySlug;
-
   // Calculate the discounted price if applicable
   const renderPrice = () => {
     if (product.isOnSale) {

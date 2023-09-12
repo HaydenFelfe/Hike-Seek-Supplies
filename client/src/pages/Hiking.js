@@ -22,6 +22,10 @@ const Hiking = () => {
     setSortByOption(selectedOption);
   };
 
+  useEffect(() => {
+    document.title = 'Hiking';
+  }, []);
+
   return (
     <div>
       <h2>Hiking Items</h2>

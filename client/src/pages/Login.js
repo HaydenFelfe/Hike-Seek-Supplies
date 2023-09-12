@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Form from 'react-bootstrap/Form';
@@ -19,6 +19,10 @@ const Login = () => {
       [name]: value,
     });
   };
+
+  useEffect(() => {
+    document.title = 'Login';
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
