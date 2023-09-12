@@ -4,39 +4,52 @@ import { GET_CAMPING_PRODUCTS } from '../utils/queries';
 import ProductBox from '../components/ProductBox';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import SortBy from '../components/SortBy';
+import sortProducts from '../utils/sortUtils';
 
 const Camping = () => {
   const { loading, error, data } = useQuery(GET_CAMPING_PRODUCTS);
-  const [campingItems, setCampingItems] = useState([]);
+  const [campingItems, setCampingProducts] = useState([]);
+  const [sortByOption, setSortByOption] = useState('');
 
   useEffect(() => {
     if (!loading && !error && data) {
       // Update the campingItems state when data is available
-      setCampingItems(data.getCampingProducts || []);
+      setCampingProducts(data.getCampingProducts || []);
     }
   }, [loading, error, data]);
+
+  const handleSortChange = (selectedOption) => {
+    setSortByOption(selectedOption);
+  };
 
   return (
     <div>
       <h2>Camping Items</h2>
+      <div style={{ marginLeft: '15px' }}>
+        {' '}
+        {/* Add inline style for left margin */}
+        <SortBy onSortChange={handleSortChange} />{' '}
+        {/* Pass handleSortChange as a callback */}
+      </div>
       <div className="products">
         {loading ? (
           <LoadingBox />
         ) : error ? (
           <MessageBox variant="danger">{error.message}</MessageBox>
         ) : campingItems && campingItems.length > 0 ? (
-          campingItems.map((item) => (
+          sortProducts(campingItems, sortByOption).map((product) => (
             <ProductBox
-              key={item._id}
-              title={item.title}
-              price={item.price}
-              description={item.description}
-              image={item.image}
-              rating={item.rating}
-              numReviews={item.numReviews}
-              slug={item.slug}
-              isOnSale={item.isOnSale} // Pass the isOnSale prop
-              discountPercentage={item.discountPercentage} // Pass the discountPercentage prop
+              key={product._id}
+              title={product.title}
+              price={product.price}
+              description={product.description}
+              image={product.image}
+              rating={product.rating}
+              numReviews={product.numReviews}
+              slug={product.slug}
+              isOnSale={product.isOnSale}
+              discountPercentage={product.discountPercentage}
             />
           ))
         ) : (

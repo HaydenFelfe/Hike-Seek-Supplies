@@ -4,29 +4,38 @@ import { GET_USED_PRODUCTS } from '../utils/queries';
 import ProductBox from '../components/ProductBox';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import SortBy from '../components/SortBy';
+import sortProducts from '../utils/sortUtils';
 
 const UsedEquipment = () => {
-  // Change the component name to UsedEquipment
   const { loading, error, data } = useQuery(GET_USED_PRODUCTS);
-  const [usedItems, setUsedItems] = useState([]); // Update the state name
+  const [usedItems, setUsedItems] = useState([]);
+  const [sortByOption, setSortByOption] = useState('');
 
   useEffect(() => {
     if (!loading && !error && data) {
-      // Update the usedItems state when data is available
-      setUsedItems(data.getUsedProducts || []); // Update the data source
+      setUsedItems(data.getUsedProducts || []);
     }
   }, [loading, error, data]);
+
+  // Function to handle sorting
+  const handleSortChange = (selectedOption) => {
+    setSortByOption(selectedOption);
+  };
 
   return (
     <div>
       <h2>Used Items</h2>
+      <div style={{ marginLeft: '15px' }}>
+        <SortBy onSortChange={handleSortChange} />
+      </div>
       <div className="products">
         {loading ? (
           <LoadingBox />
         ) : error ? (
           <MessageBox variant="danger">{error.message}</MessageBox>
         ) : usedItems && usedItems.length > 0 ? (
-          usedItems.map((item) => (
+          sortProducts(usedItems, sortByOption).map((item) => (
             <ProductBox
               key={item._id}
               title={item.title}
@@ -36,12 +45,12 @@ const UsedEquipment = () => {
               rating={item.rating}
               numReviews={item.numReviews}
               slug={item.slug}
-              isOnSale={item.isOnSale} // Pass the isOnSale prop
-              discountPercentage={item.discountPercentage} // Pass the discountPercentage prop
+              isOnSale={item.isOnSale}
+              discountPercentage={item.discountPercentage}
             />
           ))
         ) : (
-          <p>No camping items found.</p>
+          <p>No used items found.</p>
         )}
       </div>
     </div>
