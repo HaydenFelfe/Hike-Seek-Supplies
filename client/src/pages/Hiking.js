@@ -1,41 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_HIKING_PRODUCTS } from '../utils/queries'; // Import the appropriate query
+import { GET_HIKING_PRODUCTS } from '../utils/queries';
 import ProductBox from '../components/ProductBox';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import SortBy from '../components/SortBy';
+import sortProducts from '../utils/sortUtils';
 
 const Hiking = () => {
-  const { loading, error, data } = useQuery(GET_HIKING_PRODUCTS); // Use the appropriate query
-  const [hikingItems, setHikingItems] = useState([]);
+  const { loading, error, data } = useQuery(GET_HIKING_PRODUCTS);
+  const [hikingItems, setHikingProducts] = useState([]);
+  const [sortByOption, setSortByOption] = useState('');
 
   useEffect(() => {
     if (!loading && !error && data) {
-      setHikingItems(data.getHikingProducts || []);
+      setHikingProducts(data.getHikingProducts || []);
     }
   }, [loading, error, data]);
+
+  const handleSortChange = (selectedOption) => {
+    setSortByOption(selectedOption);
+  };
 
   return (
     <div>
       <h2>Hiking Items</h2>
+      <div style={{ marginLeft: '15px' }}>
+        <SortBy onSortChange={handleSortChange} />
+      </div>
       <div className="products">
         {loading ? (
           <LoadingBox />
         ) : error ? (
           <MessageBox variant="danger">{error.message}</MessageBox>
         ) : hikingItems && hikingItems.length > 0 ? (
-          hikingItems.map((item) => (
+          sortProducts(hikingItems, sortByOption).map((product) => (
             <ProductBox
-              key={item._id}
-              title={item.title}
-              price={item.price}
-              description={item.description}
-              image={item.image}
-              rating={item.rating}
-              numReviews={item.numReviews}
-              slug={item.slug}
-              isOnSale={item.isOnSale} // Pass the isOnSale prop
-              discountPercentage={item.discountPercentage} // Pass the discountPercentage prop
+              key={product._id}
+              title={product.title}
+              price={product.price}
+              description={product.description}
+              image={product.image}
+              rating={product.rating}
+              numReviews={product.numReviews}
+              slug={product.slug}
+              isOnSale={product.isOnSale}
+              discountPercentage={product.discountPercentage}
             />
           ))
         ) : (
