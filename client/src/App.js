@@ -15,9 +15,10 @@ import Travel from './pages/Travel';
 import Used from './pages/Used';
 import Deals from './pages/Deals';
 import ProductPage from './pages/ProductPage';
-import HomePage from './pages/HomePage';
+import AllProducts from './pages/AllProducts';
 import SearchResults from './pages/SearchResults';
 import Cart from './pages/Cart';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
 
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/all" element={<AllProducts />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/cart" element={<Cart />} />
