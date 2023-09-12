@@ -4,50 +4,41 @@ import { GET_ALL_PRODUCTS } from '../utils/queries';
 import ProductBox from '../components/ProductBox';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import Button from 'react-bootstrap/Button';
+import SortBy from '../components/SortBy';
+import sortProducts from '../utils/sortUtils';
 
-const HomePage = () => {
+const AllProducts = () => {
   const { loading, error, data } = useQuery(GET_ALL_PRODUCTS);
   const [products, setProducts] = useState([]);
+  const [sortByOption, setSortByOption] = useState('');
 
   useEffect(() => {
     if (!loading && !error && data) {
-      // Sort the products by numReviews in descending order
-      const sortedProducts = data.getAllProducts
-        .slice()
-        .sort((a, b) => b.numReviews - a.numReviews);
-      // Get the top 8 products
-      const topProducts = sortedProducts.slice(0, 8);
-      setProducts(topProducts);
+      setProducts(data.getAllProducts || []);
     }
   }, [loading, error, data]);
 
+  const handleSortChange = (selectedOption) => {
+    setSortByOption(selectedOption);
+  };
+
   useEffect(() => {
-    document.title = 'Hike & Seek Supplies';
+    document.title = 'All Products';
   }, []);
 
   return (
     <div className="container-fluid">
-      <div className="image-quote-container">
-        <img
-          src={process.env.PUBLIC_URL + '/images/hiking.jpg'}
-          alt="Hiking Season"
-        />
-        <div className="quote">It's officially the hiking season!</div>
-        <div className="button-container">
-          <Button variant="primary" href="/hiking">
-            Explore Hiking
-          </Button>
-        </div>
-      </div>
-      <h2>Best Sellers</h2>
+      <h2>Featured Products</h2>
+      <SortBy onSortChange={handleSortChange} />{' '}
+      {/* Pass handleSortChange as a callback */}
       <div className="row">
         {loading ? (
           <LoadingBox />
         ) : error ? (
           <MessageBox variant="danger">{error.message}</MessageBox>
         ) : products && products.length > 0 ? (
-          products.map((product) => (
+          // Sort the products based on the selected option
+          sortProducts(products, sortByOption).map((product) => (
             <ProductBox
               key={product._id}
               title={product.title}
@@ -62,11 +53,11 @@ const HomePage = () => {
             />
           ))
         ) : (
-          <p>No top-rated products found.</p>
+          <p>No products found for the all products.</p>
         )}
       </div>
     </div>
   );
 };
 
-export default HomePage;
+export default AllProducts;

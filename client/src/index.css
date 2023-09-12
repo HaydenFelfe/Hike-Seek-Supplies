@@ -59,7 +59,7 @@ main {
   flex: 1;
 }
 .btn-primary {
-  background-color: #f0c040;
+  background-color: #3a7a50;
   color: #000000;
 }
 .products {
@@ -124,4 +124,24 @@ main {
 
 .password-input {
   margin-bottom: 10px;
+}
+
+.image-quote-container {
+  position: relative; /* Position container relative to allow absolute positioning of the quote */
+}
+
+.image-quote-container img {
+  width: 100%;
+  height: auto;
+}
+
+.quote {
+  position: absolute;
+  top: 70%; /* Position the quote in the middle vertically */
+  left: 50%; /* Position the quote in the middle horizontally */
+  transform: translate(-50%, -50%); /* Center the quote precisely */
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+  color: white; /* Set the text color to white */
+  padding: 10px; /* Add padding around the quote */
+  font-size: 24px; /* Adjust the font size as needed */
 }

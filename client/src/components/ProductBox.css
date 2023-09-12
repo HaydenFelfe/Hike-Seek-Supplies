@@ -48,6 +48,8 @@
 
 .btn-primary {
   background-color: #668362;
+}
+
   color: #000000;
   border: 3px #000000 solid;
   transition: background-color 0.3s; 

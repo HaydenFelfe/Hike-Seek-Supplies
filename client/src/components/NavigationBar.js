@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import styles from "./NavigationBar.module.css";
-
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import styles from './NavigationBar.module.css';
 
 const NavigationBar = () => {
   const [isNavbarFixed, setIsNavbarFixed] = useState(false);
@@ -14,20 +13,20 @@ const NavigationBar = () => {
       setIsNavbarFixed(scrollY > threshold);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  const fixedNavbarClass = isNavbarFixed ? styles["fixed-navigation-bar"] : "";
+  const fixedNavbarClass = isNavbarFixed ? styles['fixed-navigation-bar'] : '';
   return (
-    <div className={`${styles["navigation-container"]} ${fixedNavbarClass}`}>
-      <div className={styles["navigation-bar"]}>
-        <ul className={styles["category-list"]}>
+    <div className={`${styles['navigation-container']} ${fixedNavbarClass}`}>
+      <div className={styles['navigation-bar']}>
+        <ul className={styles['category-list']}>
           <li>
-            <Link to="/">All</Link>
+            <Link to="/all">All</Link>
           </li>
           <li>
             <Link to="/camping">Camping</Link>
@@ -51,7 +50,7 @@ const NavigationBar = () => {
             <Link to="/deals">Deals</Link>
           </li>
           {/* Include the Search component */}
-         
+
           {/* Add other category links */}
         </ul>
       </div>
