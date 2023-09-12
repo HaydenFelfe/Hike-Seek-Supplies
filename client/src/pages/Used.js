@@ -25,7 +25,7 @@ const UsedEquipment = () => {
 
   return (
     <div>
-      <h2>Used Items</h2>
+      <h2>Used Products</h2>
       <div style={{ marginLeft: '15px' }}>
         <SortBy onSortChange={handleSortChange} />
       </div>

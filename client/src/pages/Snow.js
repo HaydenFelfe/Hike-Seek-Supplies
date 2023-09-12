@@ -24,7 +24,7 @@ const Snow = () => {
 
   return (
     <div>
-      <h2>Snow Items</h2>
+      <h2>Snow Products</h2>
       <div style={{ marginLeft: '15px' }}>
         <SortBy onSortChange={handleSortChange} />
       </div>
@@ -46,6 +46,7 @@ const Snow = () => {
               slug={product.slug}
               isOnSale={product.isOnSale}
               discountPercentage={product.discountPercentage}
+              style={{  border: '1px solid #000 !important'  }}
             />
           ))
         ) : (

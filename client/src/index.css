@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #b2c5b8;
 }
 
 .site-container {
@@ -25,6 +26,7 @@ main {
 h2 {
   justify-content: center;
   text-align: center;
+  margin-top: 20px;
 }
 
 .rating {
@@ -38,7 +40,7 @@ h2 {
 }
 
 .star {
-  color: #ffc000;
+  color: #1d190d;
   font-size: 1.5rem;
 }
 
@@ -67,7 +69,7 @@ main {
 }
 
 .rating span {
-  color: #ffc000;
+  color: #000000;
 }
 
 .product {
@@ -91,7 +93,7 @@ main {
 }
 
 .discounted-price {
-  color: #ff0000;
+  color: #0c573a;
   font-weight: bold;
 }
 

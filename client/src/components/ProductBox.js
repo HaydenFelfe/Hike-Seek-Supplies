@@ -59,7 +59,7 @@ const ProductBox = ({
           <Link to={`/product/${slug}`} className="product-title">
             {title}
           </Link>
-          <div className="d-flex justify-content-center align-items-center">
+          <div className="d-flex justify-content-center align-items-center" style={{ color: 'red' }}>
             {/* Center the content horizontally and vertically */}
             <Rating rating={parseFloat(rating)} numReviews={numReviews} />
             {/* Ensure rating is a valid number */}

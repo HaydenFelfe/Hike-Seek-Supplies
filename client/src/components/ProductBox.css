@@ -1,11 +1,12 @@
 .product-box {
-  border: 1px #ccc solid;
+  border: 3px #000000 solid;
   margin: 1rem;
   width: 300px;
   height: 400px; /* Set a fixed height for all product boxes */
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.35); /* Add a subtle box shadow */
 }
 
 .product-box img {
@@ -25,6 +26,8 @@
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: black;
 }
 
 .product-description {
@@ -39,9 +42,22 @@
   margin-top: auto; /* Push the price to the bottom */
 }
 
+.reviews {
+  justify-content: center;
+}
+
 .btn-primary {
-  background-color: #f0c040;
+  background-color: #668362;
   color: #000000;
+  border: 3px #000000 solid;
+  transition: background-color 0.3s; 
+  
+}
+.btn-primary:hover {
+  background-color: #668362; /* Change the background color to green on hover */
+  color: #ffffff; /* Change the text color on hover, if needed */
+  border: 3px #000000 solid;
+  color: black;
 }
 
 .product-button {
