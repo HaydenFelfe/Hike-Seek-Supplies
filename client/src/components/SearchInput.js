@@ -21,7 +21,7 @@ function SearchInput() {
     <div className="search-container">
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Search Products"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={handleKeyDown}

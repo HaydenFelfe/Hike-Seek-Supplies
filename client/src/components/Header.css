@@ -1,58 +1,88 @@
 .header {
-    background-color: #3a7a50;
-    padding: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    gap: 75px;
-  }
-  
-  /* header.css */
-.search-container {
+  background-color: #3a7a50;
+  padding: 0px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  gap: 75px;
 }
+
+/* header.css */
+.search-container {
+display: flex;
+align-items: center;
+
+}
+
 
 .search-input {
-  padding: 8px 12px;
-  font-size: 16px;
+  padding: 8px 16px; /* Increase padding to make it bigger */
+  font-size: 18px; /* Increase font size to make the text bigger */
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px; /* Increase border-radius to make corners more rounded */
   flex-grow: 1; /* Allow the input to grow and take available space */
+  box-sizing: border-box; /* Ensure padding is included in the input's total width */
 }
+
 
 .search-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-left: -33px; /* Adjust the margin as needed to position the button */
+background: none;
+border: none;
+cursor: pointer;
+padding: 0;
+margin-left: -33px; /* Adjust the margin as needed to position the button */
 }
 
 
+.login-button {
+color: black;
+text-decoration: none;
+/* Add other styles as needed */
+}
 
-  .logo-container {
-    padding: 10px; /* Add padding around the logo */
-  
-  }
-  
-  .logo {
-    max-width: 125px; /* Set a maximum width for the logo */
 
- 
-  }
-  .search-icon {
-    width: 29px; /* Adjust the width as needed */
-    height: 23px; /* Adjust the height as needed */
-  }
-  
-  .search-bar {
-    flex: .5; /* Take remaining space in the header */
-    margin: 0 10px; /* Add some margin to the search bar */
-  }
-  
-  .auth {
-    display: flex;
-    gap: 20px; /* Add some spacing between login/signup links and cart */
-  }
+.signup-button {
+color: black;
+text-decoration: none;
+/* Add other styles as needed */
+}
+
+
+.login-icon {
+width: 16px; /* Set the width as desired */
+height: 16px; /* Set the height as desired */
+margin-right: 8px; /* Adjust the margin as needed to control spacing */
+/* Add other styles as needed */
+}
+.signup-icon {
+width: 26px; /* Set the width as desired */
+height: 27px; /* Set the height as desired */
+margin-bottom: 1.3px /* Adjust the margin as needed to control spacing */
+/* Add other styles as needed */
+}
+.logo-container {
+  padding: 10px; /* Add padding around the logo */
+
+}
+
+.logo {
+  max-width: 125px; /* Set a maximum width for the logo */
+
+
+
+}
+.search-icon {
+  width: 29px; /* Adjust the width as needed */
+  height: 23px; /* Adjust the height as needed */
+}
+
+.search-bar {
+  flex: .5; /* Take remaining space in the header */
+  margin: 0 10px; /* Add some margin to the search bar */
+}
+
+.auth {
+  display: flex;
+  gap: 20px; /* Add some spacing between login/signup links and cart */
+}
