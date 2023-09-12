@@ -1,12 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap'; // Import the Button component
-import Logo from './Logo';
-import Search from './SearchInput';
-import loginIcon from "../assets/images/login.png"
-import signUpIcon from "../assets/images/signup.png"
-import AuthService from '../utils/auth';
-import './Header.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import Logo from "./Logo";
+import Search from "./SearchInput";
+import loginIcon from "../assets/images/login.png";
+import signUpIcon from "../assets/images/signup.png";
+import cartIcon from "../assets/images/cart.png";
+import logoutIcon from "../assets/images/logout.png";
+import AuthService from "../utils/auth";
+import "./Header.css";
 
 const Header = () => {
   const loggedIn = AuthService.loggedIn();
@@ -29,29 +30,23 @@ const Header = () => {
       <div className="auth">
         {loggedIn ? (
           <>
-            <Link to="/cart">
-              <Button variant="info">Cart</Button>
+            <Link to="/cart" className="cart-button">
+              <img src={cartIcon} alt="Cart" className="cart-icon" />
+              Cart
             </Link>
-            <Button variant="info" onClick={logout}>
+            <Link variant="info" className="cart-button" onClick={logout}>
+              <img src={logoutIcon} alt="Logout" className="logout-icon" />
               Logout
-            </Button>
+            </Link>
           </>
         ) : (
           <>
-               <Link to="/login" className="login-button">
-              <img
-                src={loginIcon}
-                alt="Login"
-                className="login-icon"
-              />
+            <Link to="/login" className="login-button">
+              <img src={loginIcon} alt="Login" className="login-icon" />
               Login
             </Link>
             <Link to="/signup" className="signup-button">
-            <img
-                src={signUpIcon}
-                alt="signup"
-                className="signup-icon"
-              />
+              <img src={signUpIcon} alt="signup" className="signup-icon" />
               Sign Up
             </Link>
           </>
