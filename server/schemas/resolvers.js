@@ -1,4 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
+const { ApolloError } = require('apollo-server-express');
 const { User, Product } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -81,66 +82,83 @@ const resolvers = {
   
   
 
-  Mutation: {
-    addUser: async (parent, args) => {
-      const user = await User.create(args);
-      const token = signToken(user);
-
-      return { token, user };
+    Mutation: {
+      addUser: async (parent, args) => {
+        try {
+          // Attempt to create the user
+          const user = await User.create(args);
+          return user;
+        } catch (error) {
+          if (error.code === 11000) {
+            if (error.keyPattern.username === 1) {
+              // Handle duplicate username error
+              throw new ApolloError('Username is already taken', 'DUPLICATE_USERNAME');
+            } else if (error.keyPattern.email === 1) {
+              // Handle duplicate email error
+              throw new ApolloError('Email is already taken', 'DUPLICATE_EMAIL');
+            }
+          } else if (error.errors && error.errors.password) {
+            // Handle invalid password format error
+            throw new ApolloError(error.errors.password.message, 'INVALID_PASSWORD_FORMAT');
+          } else {
+            // Handle other errors
+            throw new ApolloError('Error creating user', 'USER_CREATION_ERROR');
+          }
+        }
+      },
+      login: async (parent, { email, password }) => {
+        const user = await User.findOne({ email });
+  
+        if (!user) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
+  
+        const correctPw = await user.isCorrectPassword(password);
+  
+        if (!correctPw) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
+  
+        const token = signToken(user);
+        return { token, user };
+      },
+      addToCart: async (parent, { productId }, context) => {
+        if (!context.user) {
+          throw new AuthenticationError('Not logged in');
+        }
+  
+        try {
+          const updatedUser = await User.findByIdAndUpdate(
+            context.user._id,
+            { $addToSet: { cart: productId } },
+            { new: true }
+          ).populate('cart');
+  
+          return updatedUser.cart;
+        } catch (error) {
+          console.error('Error adding to cart:', error);
+          throw new ApolloError('Unable to add to cart');
+        }
+      },
+      removeFromCart: async (parent, { productId }, context) => {
+        if (!context.user) {
+          throw new AuthenticationError('Not logged in');
+        }
+  
+        try {
+          const updatedUser = await User.findByIdAndUpdate(
+            context.user._id,
+            { $pull: { cart: productId } },
+            { new: true }
+          ).populate('cart');
+  
+          return updatedUser.cart;
+        } catch (error) {
+          console.error('Error removing from cart:', error);
+          throw new ApolloError('Unable to remove from cart');
+        }
+      },
     },
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
-
-      if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
-      }
-
-      const correctPw = await user.isCorrectPassword(password);
-
-      if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
-      }
-
-      const token = signToken(user);
-      return { token, user };
-    },
-    addToCart: async (parent, { productId }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError('Not logged in');
-      }
-
-      try {
-        const updatedUser = await User.findByIdAndUpdate(
-          context.user._id,
-          { $addToSet: { cart: productId } },
-          { new: true }
-        ).populate('cart');
-
-        return updatedUser.cart;
-      } catch (error) {
-        console.error('Error adding to cart:', error);
-        throw new Error('Unable to add to cart');
-      }
-    },
-    removeFromCart: async (parent, { productId }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError('Not logged in');
-      }
-
-      try {
-        const updatedUser = await User.findByIdAndUpdate(
-          context.user._id,
-          { $pull: { cart: productId } },
-          { new: true }
-        ).populate('cart');
-
-        return updatedUser.cart;
-      } catch (error) {
-        console.error('Error removing from cart:', error);
-        throw new Error('Unable to remove from cart');
-      }
-    },
-  },
-};
+  };
 
 module.exports = resolvers;
