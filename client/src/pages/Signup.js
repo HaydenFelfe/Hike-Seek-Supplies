@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useNavigate } from 'react-router-dom';
 import AuthService from '../utils/auth';
+import '../index.css';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -16,7 +17,7 @@ const Signup = () => {
     password: '',
   });
   const [addUser, { error }] = useMutation(ADD_USER);
-  const [signupSuccess, setSignupSuccess] = useState(false); // State to manage signup success message
+  const [signupSuccess, setSignupSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -38,30 +39,28 @@ const Signup = () => {
         variables: { ...formState },
       });
       AuthService.login(data.addUser.token);
-      setSignupSuccess(true); // Set signup success message to true
+      setSignupSuccess(true);
       setTimeout(() => {
-        navigate('/cart'); // Redirect to /cart after a delay
-      }, 2000); // Adjust the delay time as needed
+        navigate('/cart');
+      }, 2000);
     } catch (err) {
       console.error(err);
     }
   };
+
   if (AuthService.loggedIn()) {
-    navigate('/cart'); // Use useNavigate to navigate to /cart
-    return null; // Return null to prevent rendering the signup form
+    navigate('/cart');
+    return null;
   }
 
   return (
     <Container className="signup-container">
-      {' '}
-      {/* Add a custom CSS class */}
       <Row className="justify-content-center">
         <Col md={6}>
           <div className="text-center">
             <h2>Sign Up</h2>
           </div>
-          {signupSuccess && <p>Signup successful!</p>}{' '}
-          {/* Render success message */}
+          {signupSuccess && <p className="success-message">Signup successful!</p>}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formUsername">
               <Form.Label>Username:</Form.Label>
@@ -100,7 +99,7 @@ const Signup = () => {
               </Button>
             </div>
           </Form>
-          {error && <p>{error.message}</p>}
+          {error && <p className="error-message">{error.message}</p>}
         </Col>
       </Row>
     </Container>

@@ -33,11 +33,12 @@ const HomePage = () => {
           src={process.env.PUBLIC_URL + '/images/hiking.jpg'}
           alt="Hiking Season"
         />
-        <div className="quote">It's officially the hiking season!</div>
-        <div className="button-container">
+        <div className="quote">It's officially the hiking season!
+        <div className="button-container text-center">
           <Button variant="primary" href="/hiking">
             Explore Hiking
           </Button>
+        </div>
         </div>
       </div>
       <h2>Best Sellers</h2>
