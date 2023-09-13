@@ -48,13 +48,11 @@
 
 .btn-primary {
   background-color: #668362;
-}
-
   color: #000000;
   border: 3px #000000 solid;
-  transition: background-color 0.3s; 
-  
+  transition: background-color 0.3s;
 }
+
 .btn-primary:hover {
   background-color: #668362; /* Change the background color to green on hover */
   color: #ffffff; /* Change the text color on hover, if needed */
