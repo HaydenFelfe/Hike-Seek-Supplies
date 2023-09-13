@@ -128,10 +128,18 @@ main {
 
 .image-quote-container {
   position: relative; /* Position container relative to allow absolute positioning of the quote */
+  margin-top: 25px;
+}
+
+.image-quote-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .image-quote-container img {
-  width: 100%;
+  width: 75%;
+  justify-content: center;
   height: auto;
 }
 
@@ -144,4 +152,13 @@ main {
   color: white; /* Set the text color to white */
   padding: 10px; /* Add padding around the quote */
   font-size: 24px; /* Adjust the font size as needed */
+}
+
+
+.error-message {
+  color: red; /* Set text color to red */
+  font-size: 14px; /* Adjust font size */
+  font-weight: bold; /* Make the text bold */
+  margin-top: 5px; /* Add some space from the element above it */
+  text-align: center;
 }

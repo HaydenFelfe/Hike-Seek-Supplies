@@ -2,26 +2,24 @@ const mongoose = require('mongoose');
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const productSchema = require('./Product');
-
 const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: true,
-      unique: true,
+      required: [true, 'Username is required'],
+      unique: [true, 'Username is already in use'],
     },
     email: {
       type: String,
-      required: true,
-      unique: true,
-      match: [/.+@.+\..+/, 'Must use a valid email address'],
+      required: [true, 'Email is required'],
+      unique: [true, 'Username is already in use'],
+      match: [/.+@.+\..+/, 'Invalid email format'],
     },
     password: {
       type: String,
-      required: true,
-      minlength: 4,
-      maxlength: 20,
+      required: [true, 'Password is required'],
+      minlength: [4, 'Password must be at least 4 characters long'],
+      maxlength: 200,
     },
     cart: [
       {
@@ -32,7 +30,7 @@ const userSchema = new Schema(
   },
   {
     toJSON: {
-      virtuals: true, // don't have any virtual functions yet
+      virtuals: true,
     },
   }
 );
@@ -47,6 +45,17 @@ userSchema.pre('save', async function (next) {
 
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
+};
+
+// Define custom error messages here
+userSchema.messages = {
+  'Username is required': 'Custom message for required username',
+  'Email is required': 'Custom message for required email',
+  'Invalid email format': 'Custom message for invalid email format',
+  'Password is required': 'Custom message for required password',
+  'Password must be at least 4 characters long':
+    'Custom message for minimum password length',
+  // Add more custom messages for other validations as needed
 };
 
 const User = model('User', userSchema);
