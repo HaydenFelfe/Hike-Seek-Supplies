@@ -63,3 +63,13 @@
   margin-top: 0.5rem;
 }
 
+.add-to-cart-message {
+  font-size: 0.875rem;
+  color: #ff0000;
+  margin-top: auto;
+  margin-bottom: 0rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
