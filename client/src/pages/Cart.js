@@ -1,9 +1,9 @@
-import React from "react";
-import { useQuery } from "@apollo/client";
-import { GET_USER_CART } from "../utils/queries";
-import { Link } from "react-router-dom";
-import styles from "../components/Cart.module.css";
-import shoppingIcon from "../assets/images/shopping.png";
+import React from 'react';
+import { useQuery } from '@apollo/client';
+import { GET_USER_CART } from '../utils/queries';
+import { Link } from 'react-router-dom';
+import styles from '../components/Cart.module.css';
+import shoppingIcon from '../assets/images/shopping.png';
 
 const Cart = () => {
   const { loading, data } = useQuery(GET_USER_CART);
@@ -13,16 +13,16 @@ const Cart = () => {
   // Check if data or getUserCart is undefined or null
   if (!data || !data.getUserCart) {
     return (
-      <div className={styles["cart-container"]}>
-        <h8 className={styles["cart-title"]}>Shopping Cart</h8>
-        <p className={styles["empty-cart-message"]}>
+      <div className={styles['cart-container']}>
+        <h8 className={styles['cart-title']}>Shopping Cart</h8>
+        <p className={styles['empty-cart-message']}>
           Your cart is currently empty.
         </p>
-        <Link to="/" className={styles["go-shopping-link"]}>
+        <Link to="/" className={styles['go-shopping-link']}>
           <img
             src={shoppingIcon}
             alt="Shopping"
-            className={styles["shopping-icon"]} // Apply the CSS class to the img element
+            className={styles['shopping-icon']}
           />
           Go Shopping
         </Link>
@@ -33,21 +33,21 @@ const Cart = () => {
   const cart = data.getUserCart;
 
   return (
-    <div className={styles["cart-container"]}>
-      <h9 className={styles["cart-title"]}>Shopping Cart</h9>
+    <div className={styles['cart-container']}>
+      <h9 className={styles['cart-title']}>Shopping Cart</h9>
       {cart.length === 0 ? (
         <div>
-          <p3 className={styles["empty-cart-message"]}>
+          <p3 className={styles['empty-cart-message']}>
             Your cart is currently empty.
           </p3>
-          <Link to="/" className={styles["shopping-link"]}>
-          <img
-            src={shoppingIcon}
-            alt="Shopping"
-            className={styles["shopping-icon"]} // Apply the CSS class to the img element
-          />
-          Go Shopping
-        </Link>
+          <Link to="/" className={styles['shopping-link']}>
+            <img
+              src={shoppingIcon}
+              alt="Shopping"
+              className={styles['shopping-icon']} // Apply the CSS class to the img element
+            />
+            Go Shopping
+          </Link>
         </div>
       ) : (
         <div>
@@ -65,4 +65,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
