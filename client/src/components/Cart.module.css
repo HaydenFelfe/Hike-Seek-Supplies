@@ -1,8 +1,8 @@
-.cart-container {
+/* .empty-cart-container {
   display: flex;
-  flex-direction: column; /* Stack flex items vertically within .cart-container */
-  align-items: center; /* Align flex items horizontally within .cart-container */
-}
+  flex-direction: column; 
+  align-items: center; 
+} */
 
 .cart-container .cart-title {
   font-size: 24px;
@@ -29,8 +29,6 @@
   color: #000000;
   border-radius: 4px;
   transition: background-color 0.3s;
- 
-
 }
 
 .cart-container .go-shopping-link:hover {
@@ -48,9 +46,95 @@
   color: black;
   text-decoration: none;
   padding-bottom: 30px;
-  }
+}
 
 /* Define the hover effect for .go-shopping-link */
-.cart-container .go-shopping-link:hover {
+.empty-cart-container .go-shopping-link:hover {
   color: white; /* Hover color (a lighter shade of black) */
+}
+
+.cart-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+/* Cart Title */
+.cart-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Empty Cart Container */
+.empty-cart-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.empty-cart-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.empty-cart-message {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Cart Item */
+.cart-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.cart-item img {
+  height: 150px;
+  width: 150px;
+}
+
+.item-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.item-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Remove Button */
+.remove-button {
+  background-color: #668362;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.remove-button:hover {
+  text-decoration: underline;
+}
+
+/* Checkout Button */
+.checkout-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.total-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.proceed-button {
+  font-weight: bold;
+  font-size: 20px;
 }

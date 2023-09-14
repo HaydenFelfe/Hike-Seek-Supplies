@@ -110,14 +110,12 @@ main {
 }
 
 .login-container {
-
   padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
 }
 
 .signup-container {
- 
   padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
@@ -155,11 +153,26 @@ main {
   font-size: 24px; /* Adjust the font size as needed */
 }
 
-
 .error-message {
   color: red; /* Set text color to red */
   font-size: 14px; /* Adjust font size */
   font-weight: bold; /* Make the text bold */
   margin-top: 5px; /* Add some space from the element above it */
   text-align: center;
+}
+
+.cart-message {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cart-message.success {
+  background-color: #4caf50; /* Green background for success message */
+  color: #fff; /* White text color for success message */
+}
+
+.cart-message.error {
+  background-color: #f44336; /* Red background for error message */
+  color: #fff; /* White text color for error message */
 }
