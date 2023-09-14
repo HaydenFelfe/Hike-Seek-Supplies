@@ -41,6 +41,7 @@ const Snow = () => {
           sortProducts(snowItems, sortByOption).map((product) => (
             <ProductBox
               key={product._id}
+              productId={product._id}
               title={product.title}
               price={product.price}
               description={product.description}
@@ -50,7 +51,7 @@ const Snow = () => {
               slug={product.slug}
               isOnSale={product.isOnSale}
               discountPercentage={product.discountPercentage}
-              style={{  border: '1px solid #000 !important'  }}
+              style={{ border: '1px solid #000 !important' }}
             />
           ))
         ) : (

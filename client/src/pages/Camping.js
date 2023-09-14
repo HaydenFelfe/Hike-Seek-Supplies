@@ -45,6 +45,7 @@ const Camping = () => {
           sortProducts(campingItems, sortByOption).map((product) => (
             <ProductBox
               key={product._id}
+              productId={product._id}
               title={product.title}
               price={product.price}
               description={product.description}
