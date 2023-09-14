@@ -25,6 +25,7 @@ const ProductBox = ({
 
   const handleAddToCart = () => {
     if (isLoggedIn) {
+      console.log(productId);
       addToCart({
         variables: {
           productId: productId,

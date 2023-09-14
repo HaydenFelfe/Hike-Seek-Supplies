@@ -39,18 +39,19 @@ const UsedEquipment = () => {
         ) : error ? (
           <MessageBox variant="danger">{error.message}</MessageBox>
         ) : usedItems && usedItems.length > 0 ? (
-          sortProducts(usedItems, sortByOption).map((item) => (
+          sortProducts(usedItems, sortByOption).map((product) => (
             <ProductBox
-              key={item._id}
-              title={item.title}
-              price={item.price}
-              description={item.description}
-              image={item.image}
-              rating={item.rating}
-              numReviews={item.numReviews}
-              slug={item.slug}
-              isOnSale={item.isOnSale}
-              discountPercentage={item.discountPercentage}
+              key={product._id}
+              productId={product._id}
+              title={product.title}
+              price={product.price}
+              description={product.description}
+              image={product.image}
+              rating={product.rating}
+              numReviews={product.numReviews}
+              slug={product.slug}
+              isOnSale={product.isOnSale}
+              discountPercentage={product.discountPercentage}
             />
           ))
         ) : (
