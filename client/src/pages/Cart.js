@@ -14,7 +14,7 @@ const Cart = () => {
   if (!data || !data.getUserCart) {
     return (
       <div className={styles['cart-container']}>
-        <h8 className={styles['cart-title']}>Shopping Cart</h8>
+        <h2 className={styles['cart-title']}>Shopping Cart</h2>
         <p className={styles['empty-cart-message']}>
           Your cart is currently empty.
         </p>
@@ -30,16 +30,16 @@ const Cart = () => {
     );
   }
 
-  const cart = data.getUserCart;
+  const cart = data.getUserCart.cart;
 
   return (
     <div className={styles['cart-container']}>
-      <h9 className={styles['cart-title']}>Shopping Cart</h9>
+      <h2 className={styles['cart-title']}>Shopping Cart</h2>
       {cart.length === 0 ? (
         <div>
-          <p3 className={styles['empty-cart-message']}>
+          <p className={styles['empty-cart-message']}>
             Your cart is currently empty.
-          </p3>
+          </p>
           <Link to="/" className={styles['shopping-link']}>
             <img
               src={shoppingIcon}
@@ -54,8 +54,14 @@ const Cart = () => {
           {/* Display cart items here */}
           {cart.map((item) => (
             <div key={item._id} className="cart-item">
-              <p4>{item.title}</p4>
-              {/* Add more details about the item */}
+              <div>
+                <img src={item.image} alt={item.title} />
+              </div>
+              <div>
+                <p>{item.title}</p>
+                <p>Price: ${item.price.toFixed(2)}</p>
+                {/* Add more details about the item */}
+              </div>
             </div>
           ))}
         </div>
