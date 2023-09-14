@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useQuery } from '@apollo/client'; // Import useQuery
-
+import './SearchResults.css'; 
 // Import your SEARCH_PRODUCTS_QUERY here
 import { SEARCH_PRODUCTS_QUERY } from '../graphql/queries'; // Replace with the actual import path
 
@@ -25,7 +25,7 @@ function SearchResults() {
   const searchResults = data.searchProducts; // Adjust this based on your GraphQL query
 
   return (
-    <div>
+    <div className="centered-container">
       <h2>Search Results for "{searchQuery}"</h2>
       <div className="products">
         {searchResults.length === 0 ? (
