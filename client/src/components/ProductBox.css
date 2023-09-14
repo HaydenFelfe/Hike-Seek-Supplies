@@ -2,7 +2,7 @@
   border: 3px #000000 solid;
   margin: 1rem;
   width: 300px;
-  height: 400px; /* Set a fixed height for all product boxes */
+  height: 470px; /* Set a fixed height for all product boxes */
   justify-content: center;
   align-items: center;
   display: flex;
