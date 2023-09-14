@@ -3,6 +3,8 @@
   margin: 1rem;
   width: 300px;
   height: 400px; /* Set a fixed height for all product boxes */
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;

@@ -19,6 +19,7 @@ import AllProducts from './pages/AllProducts';
 import SearchResults from './pages/SearchResults';
 import Cart from './pages/Cart';
 import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -42,9 +43,9 @@ function App() {
             <Route path="/used" element={<Used />} />
             <Route path="/deals" element={<Deals />} />
             <Route path="/product/:slug" element={<ProductPage />} />
-
-            {/* Add a route for search results */}
             <Route path="/search" element={<SearchResults />} />
+            <Route path="*" element={<NotFoundPage />} />
+
           </Routes>
           <Footer />
         </div>
