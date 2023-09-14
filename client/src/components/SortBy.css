@@ -1,9 +1,11 @@
 .sort-by {
     /* Position the element relative to the viewport */
     position: fixed; /* Use fixed positioning */
-    top: 210px; /* Adjust the top distance as needed */
-    right: 20px; /* Adjust the right distance as needed */
+    top: 260px; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Move the element back by 50% of its own width and height */
     z-index: 999; /* Set a high z-index to ensure it appears above other content */
+    margin-top: 20px;
   }
   .sort-by.scrolling {
     /* Change styles when scrolling */
