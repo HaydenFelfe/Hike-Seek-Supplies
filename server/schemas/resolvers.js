@@ -87,7 +87,8 @@ const resolvers = {
         try {
           // Attempt to create the user
           const user = await User.create(args);
-          return user;
+          const token = signToken(user);
+          return { user, token };
         } catch (error) {
           if (error.code === 11000) {
             if (error.keyPattern.username === 1) {
