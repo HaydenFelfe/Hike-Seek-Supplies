@@ -31,8 +31,10 @@ const Login = () => {
         variables: { ...formState },
       });
       AuthService.login(data.login.token); // Store token and redirect
+      console.log('Logged in successful');
     } catch (err) {
       console.error(err);
+      console.log('Login failed');
     }
   };
 

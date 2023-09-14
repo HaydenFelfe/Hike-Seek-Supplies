@@ -30,7 +30,7 @@ const Camping = () => {
   return (
     <div>
       <h2>Camping Products</h2>
-      <div style={{ marginLeft: '15px' }}>
+      <div>
         {' '}
         {/* Add inline style for left margin */}
         <SortBy onSortChange={handleSortChange} />{' '}
@@ -45,6 +45,7 @@ const Camping = () => {
           sortProducts(campingItems, sortByOption).map((product) => (
             <ProductBox
               key={product._id}
+              productId={product._id}
               title={product.title}
               price={product.price}
               description={product.description}
