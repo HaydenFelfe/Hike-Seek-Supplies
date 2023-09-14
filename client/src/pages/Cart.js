@@ -17,12 +17,28 @@ const Cart = () => {
   if (loading) return <p>Loading...</p>;
 
   if (!data || !data.getUserCart || !data.getUserCart.cart) {
-    return;
+    return (
+      <Container className={styles['cart-container']}>
+        <h3 className={styles['cart-title']}>Shopping Cart</h3>
+        <div className={styles['empty-cart-message']}>
+          Your cart is currently empty.
+          <Link to="/" className={styles['go-shopping-link']}>
+            <img
+              src={shoppingIcon}
+              alt="Shopping"
+              className={styles['shopping-icon']}
+            />
+            Go Shopping
+          </Link>
+        </div>
+      </Container>
+    );
   }
 
   const cart = data.getUserCart.cart;
 
   let total = 0;
+  let totalSavings = 0; // Initialize total savings
 
   const handleRemoveItem = (itemId) => {
     removeFromCart({ variables: { productId: itemId } });
@@ -46,7 +62,21 @@ const Cart = () => {
       ) : (
         <div>
           {cart.map((item) => {
-            total += item.price;
+            const savings =
+              item.discountPercentage > 0
+                ? ((item.price * item.discountPercentage) / 100).toFixed(2)
+                : null;
+
+            total +=
+              item.discountPercentage > 0
+                ? (item.price * (100 - item.discountPercentage)) / 100
+                : item.price;
+
+            // Add item savings to total savings
+            if (item.discountPercentage > 0) {
+              totalSavings += (item.price * item.discountPercentage) / 100;
+            }
+
             return (
               <div key={item._id} className={styles['cart-item']}>
                 <Row>
@@ -62,14 +92,23 @@ const Cart = () => {
                   </Col>
                   <Col md={2}>
                     <p className={styles['item-price']}>
-                      ${item.price.toFixed(2)}
+                      ${' '}
+                      {item.discountPercentage > 0
+                        ? (
+                            (item.price * (100 - item.discountPercentage)) /
+                            100
+                          ).toFixed(2)
+                        : item.price.toFixed(2)}
                     </p>
+                    {savings && (
+                      <p className={styles['savings']}>You saved: ${savings}</p>
+                    )}
                   </Col>
                   <Col md={2}>
                     <Button
                       variant="danger"
                       className={styles['remove-button']}
-                      onClick={() => handleRemoveItem(item._id)} // Call the remove function with the item ID
+                      onClick={() => handleRemoveItem(item._id)}
                     >
                       Remove
                     </Button>
@@ -82,6 +121,11 @@ const Cart = () => {
             <p className={styles['total-price']}>
               Total Price: ${total.toFixed(2)}
             </p>
+            {totalSavings > 0 && ( // Display total savings only if there are savings
+              <p className={styles['total-savings']}>
+                Total Savings: ${totalSavings.toFixed(2)}
+              </p>
+            )}
             <Button variant="warning" className={styles['proceed-button']}>
               Proceed to Pay
             </Button>

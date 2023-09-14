@@ -121,7 +121,6 @@
   text-decoration: underline;
 }
 
-/* Checkout Button */
 .checkout-button {
   display: flex;
   justify-content: space-between;
@@ -132,9 +131,25 @@
 .total-price {
   font-size: 20px;
   font-weight: bold;
+  text-align: right;
 }
 
 .proceed-button {
   font-weight: bold;
   font-size: 20px;
+}
+
+.cart-item {
+  position: relative;
+}
+
+.savings {
+  position: absolute;
+  bottom: 20px;
+  margin: 0;
+  color: red;
+}
+
+.total-savings {
+  color: red;
 }

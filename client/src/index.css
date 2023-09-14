@@ -27,7 +27,6 @@ h2 {
   justify-content: center;
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 60px;
 }
 
 .rating {
@@ -159,20 +158,4 @@ main {
   font-weight: bold; /* Make the text bold */
   margin-top: 5px; /* Add some space from the element above it */
   text-align: center;
-}
-
-.cart-message {
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.cart-message.success {
-  background-color: #4caf50; /* Green background for success message */
-  color: #fff; /* White text color for success message */
-}
-
-.cart-message.error {
-  background-color: #f44336; /* Red background for error message */
-  color: #fff; /* White text color for error message */
 }
