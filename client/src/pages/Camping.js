@@ -30,7 +30,7 @@ const Camping = () => {
   return (
     <div>
       <h2>Camping Products</h2>
-      <div style={{ marginLeft: '15px' }}>
+      <div>
         {' '}
         {/* Add inline style for left margin */}
         <SortBy onSortChange={handleSortChange} />{' '}
