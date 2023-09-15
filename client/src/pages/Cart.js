@@ -120,12 +120,13 @@ const Cart = () => {
           <div className={styles['checkout-button']}>
             <p className={styles['total-price']}>
               Total Price: ${total.toFixed(2)}
-            </p>
-            {totalSavings > 0 && ( // Display total savings only if there are savings
+              {totalSavings > 0 && ( // Display total savings only if there are savings
               <p className={styles['total-savings']}>
-                Total Savings: ${totalSavings.toFixed(2)}
+                Savings: ${totalSavings.toFixed(2)}
               </p>
             )}
+            </p>
+            
             <Button variant="warning" className={styles['proceed-button']}>
               Proceed to Pay
             </Button>
