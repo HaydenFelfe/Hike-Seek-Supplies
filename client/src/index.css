@@ -145,6 +145,10 @@ main {
   height: auto;
 }
 
+.row{
+  margin-top: 60px;
+}
+
 .quote {
   position: absolute;
   top: 70%; /* Position the quote in the middle vertically */
