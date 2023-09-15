@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Rating from './Rating'; // Import the Rating component
-import './ProductBox.css'; // Import your custom CSS
+import { Card, Button } from 'react-bootstrap';
+import Rating from './Rating';
+import './ProductBox.css';
 import { useMutation } from '@apollo/client';
 import { ADD_TO_CART } from '../utils/mutations';
 import { GET_USER_CART } from '../utils/queries';
