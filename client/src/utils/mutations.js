@@ -55,3 +55,19 @@ export const REMOVE_FROM_CART = gql`
     }
   }
 `;
+
+export const CLEAR_CART = gql`
+  mutation clearCart {
+    clearCart {
+      _id
+      username
+      email
+      cart {
+        _id
+        title
+        description
+        price
+      }
+    }
+  }
+`;

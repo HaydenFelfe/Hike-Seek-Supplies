@@ -46,6 +46,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addToCart(productId: ID!): User
     removeFromCart(productId: ID!): User
+    clearCart: User
   }
 
   type Auth {
