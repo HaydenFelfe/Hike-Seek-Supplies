@@ -165,6 +165,24 @@ const resolvers = {
         throw new ApolloError('Unable to remove from cart');
       }
     },
+    clearCart: async (parent, args, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not logged in');
+      }
+
+      try {
+        const updatedUser = await User.findByIdAndUpdate(
+          context.user._id,
+          { $set: { cart: [] } }, // Clear the cart by setting it to an empty array
+          { new: true }
+        ).populate('cart');
+
+        return updatedUser;
+      } catch (error) {
+        console.error('Error clearing cart:', error);
+        throw new ApolloError('Unable to clear the cart');
+      }
+    },
   },
 };
 
