@@ -6,6 +6,7 @@ import Rating from './Rating'; // Import the Rating component
 import './ProductBox.css'; // Import your custom CSS
 import { useMutation } from '@apollo/client';
 import { ADD_TO_CART } from '../utils/mutations';
+import { GET_USER_CART } from '../utils/queries';
 import AuthService from '../utils/auth';
 
 const ProductBox = ({
@@ -20,32 +21,42 @@ const ProductBox = ({
   discountPercentage,
   productId,
 }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [addToCart] = useMutation(ADD_TO_CART);
+  const isLoggedIn = AuthService.loggedIn(); // Check if the user is logged in
+  const [addToCart] = useMutation(ADD_TO_CART, {
+    refetchQueries: [{ query: GET_USER_CART }],
+  });
+  const [addToCartMessage, setAddToCartMessage] = useState(''); // Initialize the message state
 
   const handleAddToCart = () => {
     if (isLoggedIn) {
-      console.log(productId);
       addToCart({
         variables: {
           productId: productId,
         },
       })
         .then(() => {
-          alert(`Added ${title} to the cart`);
+          setAddToCartMessage(`Added ${title} to the cart`); // Set success message
+          // Clear the message after 2 seconds
+          setTimeout(() => {
+            setAddToCartMessage('');
+          }, 2000);
         })
         .catch((error) => {
           console.error('Error adding to cart:', error);
-          alert('Error adding to cart. Please try again.');
+          setAddToCartMessage('Error adding to cart. Please try again.'); // Set error message
+          // Clear the message after 2 seconds
+          setTimeout(() => {
+            setAddToCartMessage('');
+          }, 2000);
         });
     } else {
-      alert('Must be logged in to add to cart');
+      setAddToCartMessage('Must be logged in to add to cart'); // Set login required message
+      // Clear the message after 2 seconds
+      setTimeout(() => {
+        setAddToCartMessage('');
+      }, 2000);
     }
   };
-
-  useState(() => {
-    setIsLoggedIn(AuthService.loggedIn());
-  }, []);
 
   const renderPrice = () => {
     if (isOnSale) {
@@ -85,12 +96,19 @@ const ProductBox = ({
           </div>
           <Card.Text className="product-description">{description}</Card.Text>
           <div className="product-price">{renderPrice()}</div>
-          <Button
-            onClick={handleAddToCart}
-            className="btn-primary product-button"
-          >
-            Add to Cart
-          </Button>
+          {isLoggedIn && (
+            <>
+              <Button
+                onClick={handleAddToCart}
+                className="btn-primary product-button"
+              >
+                Add to Cart
+              </Button>
+              {addToCartMessage && (
+                <p className="add-to-cart-message">{addToCartMessage}</p>
+              )}
+            </>
+          )}
         </div>
       </Card>
     </div>

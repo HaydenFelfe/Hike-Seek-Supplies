@@ -27,7 +27,6 @@ h2 {
   justify-content: center;
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 60px;
 }
 
 .rating {
@@ -62,11 +61,15 @@ main {
 .btn-primary {
   background-color: #3a7a50;
   color: #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 60px;
 }
 
 .rating span {
@@ -110,14 +113,12 @@ main {
 }
 
 .login-container {
-
   padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
 }
 
 .signup-container {
- 
   padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
@@ -154,7 +155,6 @@ main {
   padding: 10px; /* Add padding around the quote */
   font-size: 24px; /* Adjust the font size as needed */
 }
-
 
 .error-message {
   color: red; /* Set text color to red */

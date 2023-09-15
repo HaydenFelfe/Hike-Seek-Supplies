@@ -52,8 +52,8 @@
 }
 
 .btn-primary:hover {
-  background-color: #668362; /* Change the background color to green on hover */
-  color: #ffffff; /* Change the text color on hover, if needed */
+  background-color: #366630; /* Change the background color to green on hover */
+  color: #668362; /* Change the text color on hover, if needed */
   border: 3px #000000 solid;
   color: black;
 }
@@ -62,3 +62,13 @@
   margin-top: 0.5rem;
 }
 
+.add-to-cart-message {
+  font-size: 0.875rem;
+  color: #ff0000;
+  margin-top: auto;
+  margin-bottom: 0rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

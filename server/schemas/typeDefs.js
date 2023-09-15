@@ -35,9 +35,9 @@ const typeDefs = gql`
     getTravelProducts: [Product]
     getUsedProducts: [Product]
     getDiscountedProducts: [Product]
-    getUserCart: [Product]
+    getUserCart: User
     getProductBySlug(slug: String!): Product
-    
+
     searchProducts(query: String!): [Product]
   }
 
