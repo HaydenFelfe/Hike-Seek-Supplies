@@ -113,20 +113,12 @@
   margin: 0px;
 }
 
-/* Remove Button */
 .remove-button {
   background-color: #668362;
   border: none;
-  color: white;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
   margin-top: 25px;
-  border: 3px solid black;
-}
-
-.remove-button:hover {
-  text-decoration: underline;
+  border: 1px solid black;
 }
 
 .checkout-button {
