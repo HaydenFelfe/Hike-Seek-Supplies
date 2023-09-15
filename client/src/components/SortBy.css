@@ -37,46 +37,47 @@
     box-shadow: none !important;
     outline: none !important;
   }
-
   .btn-primary {
     /* Change the background color for .btn-primary */
     --bs-btn-bg: #668362;
-
     --bs-btn-border-color: #000; /* Black color code */
-
     /* Set the border width to 3px */
     --bs-btn-border-width: 3px;
-    
     /* Change the focus state color and shadow */
     --bs-btn-focus-shadow-rgb: red;
-  
     /* Change the active state color and background */
     --bs-btn-active-color: black;
     --bs-btn-active-bg: #668362;
-    --bs-btn-active-border-color: black; 
+    --bs-btn-active-border-color: black;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   }
-
-  .dropdown-menu {
-    background-color: #668362; /* Set the background color */
-    color: black; /* Set the text color */
-    border: 3px solid black; /* Set the border color */
-   
+  
+  .btn-primary:hover {
+    /* Change background color on hover */
+    --bs-btn-bg: #366630;
+    /* Change active background color on hover */
+    --bs-btn-active-bg: #366630;
+    /* Change active text color on hover */
+    --bs-btn-active-color: white;
   }
-  .custom-dropdown-menu {
-    right: 0;
-    left: auto;
+  .dropdown-menu {
+    background-color: #668362 !important;
+    color: black !important;
+    border: 3px solid black !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-top: 62px;
   }
   
   /* Style the dropdown menu items */
   .dropdown-item {
-    color: black; /* Set the text color for menu items */
-    background-color: your-item-bg-color; /* Set the background color for menu items */
-    padding: your-item-padding; /* Adjust padding as needed */
+    color: black;
+    background-color: your-item-bg-color;
+    padding: your-item-padding;
   }
   
   /* Hover state for dropdown menu items */
   .dropdown-item:hover {
-    background-color: your-item-hover-bg-color; /* Change background color on hover */
-    color: your-item-hover-text-color; /* Change text color on hover */
+    background-color: your-item-hover-bg-color;
+    color: your-item-hover-text-color;
   }
