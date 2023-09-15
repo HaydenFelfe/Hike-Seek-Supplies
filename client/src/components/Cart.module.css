@@ -7,8 +7,8 @@
 .cart-container .cart-title {
   font-size: 24px;
   font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 10px;
+  margin-top: 60px;
+  margin-bottom: 40px;
   text-align: center; /* Center text horizontally within .cart-title */
 }
 
@@ -76,9 +76,13 @@
 }
 
 .empty-cart-message {
+  padding-bottom: 295px;
   font-size: 18px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  text-align: center;
+}
+.go-shopping-container {
+  margin-top: 20px; /* Adjust this value for spacing between the message and link */
+  text-align: center; /* Center text horizontally within .go-shopping-container */
 }
 
 /* Cart Item */
