@@ -73,10 +73,11 @@
 .empty-cart-title {
   font-size: 24px;
   font-weight: bold;
+
 }
 
 .empty-cart-message {
-  padding-bottom: 295px;
+  padding-bottom: 300px;
   font-size: 18px;
   text-align: center;
 }
@@ -141,8 +142,19 @@
 .proceed-button {
   font-weight: bold;
   font-size: 20px;
+  margin-top: -70px; /* Add a negative margin-top to move it up */
+  color: black;
+  background-color: #668362;
+  border: 3px solid black;
 }
 
+.proceed-button:hover {
+  background-color: #668362; 
+  color: white; 
+  border-color: #3a7a50; 
+  border: 3px solid black;
+
+}
 .cart-item {
   position: relative;
 }
@@ -151,9 +163,9 @@
   position: absolute;
   bottom: 20px;
   margin: 0;
-  color: red;
+  color: #668362;
 }
 
 .total-savings {
-  color: red;
+  color: #668362;
 }
