@@ -8,3 +8,24 @@
   bottom: 0;
   width: 100%;
 }
+
+/* Adjust line-height for the text elements */
+.contact-us,
+.copyright {
+  line-height: 1.5; /* Adjust this value as needed */
+}
+
+.contact-us p {
+  margin: 5px; /* Reset margin to remove extra space */
+  padding: 0; /* Reset padding to remove extra space */
+}
+
+.contact-email a {
+  color: black; /* Set the link color to green */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Add a smooth color transition effect */
+}
+
+.contact-email a:hover {
+  color: black; /* Change the link color to black when hovering */
+}

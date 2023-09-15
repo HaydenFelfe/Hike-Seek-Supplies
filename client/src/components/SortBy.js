@@ -17,7 +17,7 @@ const SortBy = ({ onSortChange }) => {
   useEffect(() => {
     const handleScroll = () => {
       // Change the threshold value to determine when the element starts moving
-      if (window.scrollY > 50) {
+      if (window.scrollY > 30) {
         setIsVisible(true);
       } else {
         setIsVisible(false);

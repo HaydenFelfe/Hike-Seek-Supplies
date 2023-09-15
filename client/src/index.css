@@ -61,11 +61,15 @@ main {
 .btn-primary {
   background-color: #3a7a50;
   color: #000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
+
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 60px;
 }
 
 .rating span {
