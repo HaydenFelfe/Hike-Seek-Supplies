@@ -94,7 +94,7 @@
   background-color: #fff;
   border-radius: 20px;
   text-align: center;
-  padding-left: 130px;
+  
 }
 
 .cart-item img {
@@ -131,9 +131,11 @@
 
 .checkout-button {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
   margin-top: 20px;
+  
 }
 
 .total-price {
@@ -142,13 +144,16 @@
   text-align: right;
 }
 
+
 .proceed-button {
   font-weight: bold;
   font-size: 20px;
-  margin-top: -70px; /* Add a negative margin-top to move it up */
+ /* Add a negative margin-top to move it up */
+  justify-content: center;
   color: black;
   background-color: #668362;
   border: 3px solid black;
+  margin-top: -170px;
 }
 
 .proceed-button:hover {
