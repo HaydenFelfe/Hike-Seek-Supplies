@@ -30,7 +30,7 @@ const HomePage = () => {
     <div className="container-fluid">
       <div className="image-quote-container">
         <img
-          src={process.env.PUBLIC_URL + '/images/hiking.jpg'}
+          src={process.env.PUBLIC_URL + '/images/hiking1.jpg'}
           alt="Hiking Season"
         />
         <div className="quote">
