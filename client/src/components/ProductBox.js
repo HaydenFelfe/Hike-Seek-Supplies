@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Rating from './Rating'; // Import the Rating component
-import './ProductBox.css'; // Import your custom CSS
+import { Card, Button } from 'react-bootstrap';
+import Rating from './Rating';
+import './ProductBox.css';
 import { useMutation } from '@apollo/client';
 import { ADD_TO_CART } from '../utils/mutations';
 import { GET_USER_CART } from '../utils/queries';
@@ -21,11 +20,11 @@ const ProductBox = ({
   discountPercentage,
   productId,
 }) => {
-  const isLoggedIn = AuthService.loggedIn(); // Check if the user is logged in
+  const isLoggedIn = AuthService.loggedIn();
   const [addToCart] = useMutation(ADD_TO_CART, {
     refetchQueries: [{ query: GET_USER_CART }],
   });
-  const [addToCartMessage, setAddToCartMessage] = useState(''); // Initialize the message state
+  const [addToCartMessage, setAddToCartMessage] = useState('');
 
   const handleAddToCart = () => {
     if (isLoggedIn) {
@@ -35,26 +34,23 @@ const ProductBox = ({
         },
       })
         .then(() => {
-          setAddToCartMessage(`Added ${title} to the cart`); // Set success message
-          // Clear the message after 2 seconds
+          setAddToCartMessage(`Added ${title} to the cart`);
           setTimeout(() => {
             setAddToCartMessage('');
-          }, 2000);
+          }, 2000); // Clear the message after 2 seconds
         })
         .catch((error) => {
           console.error('Error adding to cart:', error);
-          setAddToCartMessage('Error adding to cart. Please try again.'); // Set error message
-          // Clear the message after 2 seconds
+          setAddToCartMessage('Error adding to cart. Please try again.');
           setTimeout(() => {
             setAddToCartMessage('');
-          }, 2000);
+          }, 2000); // Clear the message after 2 seconds
         });
     } else {
-      setAddToCartMessage('Must be logged in to add to cart'); // Set login required message
-      // Clear the message after 2 seconds
+      setAddToCartMessage('Must be logged in to add to cart');
       setTimeout(() => {
         setAddToCartMessage('');
-      }, 2000);
+      }, 2000); // Clear the message after 2 seconds
     }
   };
 
@@ -96,19 +92,17 @@ const ProductBox = ({
           </div>
           <Card.Text className="product-description">{description}</Card.Text>
           <div className="product-price">{renderPrice()}</div>
-          {isLoggedIn && (
-            <>
-              <Button
-                onClick={handleAddToCart}
-                className="btn-primary product-button"
-              >
-                Add to Cart
-              </Button>
-              {addToCartMessage && (
-                <p className="add-to-cart-message">{addToCartMessage}</p>
-              )}
-            </>
-          )}
+          <>
+            <Button
+              onClick={handleAddToCart}
+              className="btn-primary product-button"
+            >
+              Add to Cart
+            </Button>
+            {addToCartMessage && (
+              <p className="add-to-cart-message">{addToCartMessage}</p>
+            )}
+          </>
         </div>
       </Card>
     </div>
