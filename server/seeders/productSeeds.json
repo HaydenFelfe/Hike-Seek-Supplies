@@ -2,7 +2,7 @@
   {
     "title": "Camping Tent",
     "description": "A spacious camping tent for your outdoor adventures.",
-    "price": 199.99,
+    "price": 199,
     "image": "/images/camping-tent.jpg",
     "productId": "P1",
     "category": "camping",
@@ -16,7 +16,7 @@
   {
     "title": "Hiking Backpack",
     "description": "A lightweight backpack for your hiking trips.",
-    "price": 79.99,
+    "price": 79,
     "image": "/images/hiking-backpack.jpg",
     "productId": "P2",
     "category": "hiking",
@@ -28,7 +28,7 @@
   {
     "title": "Used Snowboard",
     "description": "A high-quality used snowboard for winter sports enthusiasts.",
-    "price": 149.99,
+    "price": 149,
     "image": "/images/used-snowboard.jpg",
     "productId": "P3",
     "category": "snow",
@@ -43,7 +43,7 @@
   {
     "title": "Waterproof Kayak",
     "description": "A durable kayak for water adventures.",
-    "price": 299.99,
+    "price": 299,
     "image": "/images/kayak.jpg",
     "productId": "P4",
     "category": "water",
@@ -55,7 +55,7 @@
   {
     "title": "Travel Pillow",
     "description": "A comfortable pillow for frequent travelers.",
-    "price": 49.99,
+    "price": 49,
     "image": "/images/travel-pillow.jpg",
     "productId": "P5",
     "category": "travel",
@@ -67,7 +67,7 @@
   {
     "title": "Camping Chair",
     "description": "A portable camping chair for avid campers.",
-    "price": 44.99,
+    "price": 44,
     "image": "/images/camping-chair.jpg",
     "productId": "P6",
     "category": "camping",
@@ -79,7 +79,7 @@
   {
     "title": "Hiking Pole",
     "description": "A sturdy hiking pole for your outdoor expeditions.",
-    "price": 109.99,
+    "price": 109,
     "image": "/images/hiking-pole.jpg",
     "productId": "P7",
     "category": "hiking",
@@ -91,7 +91,7 @@
   {
     "title": "Snow Pants",
     "description": "Warm and waterproof snow pants for cold weather.",
-    "price": 59.99,
+    "price": 59,
     "image": "/images/snow-pants.jpg",
     "productId": "P8",
     "category": "snow",
@@ -105,7 +105,7 @@
   {
     "title": "Unicorn Pool Floaty",
     "description": "A fun unicorn-themed pool floaty for a day at the pool.",
-    "price": 29.99,
+    "price": 29,
     "image": "/images/unicorn-pool-float.jpg",
     "productId": "P9",
     "category": "water",
@@ -117,7 +117,7 @@
   {
     "title": "Travel Luggage",
     "description": "Durable and spacious travel luggage for your journeys.",
-    "price": 89.99,
+    "price": 89,
     "image": "/images/travel-luggage.jpg",
     "productId": "P10",
     "category": "travel",
@@ -129,7 +129,7 @@
   {
     "title": "Ice Cooler",
     "description": "Stay cool during your camping trips with our high-quality Ice Cooler.",
-    "price": 169.99,
+    "price": 169,
     "image": "/images/ice-cooler.jpg",
     "productId": "P11",
     "category": "camping",
@@ -144,7 +144,7 @@
   {
     "title": "Hiking Socks",
     "description": "Elevate your hiking experience with our comfortable Hiking Socks.",
-    "price": 14.99,
+    "price": 14,
     "image": "/images/hiking-socks.jpg",
     "productId": "P12",
     "category": "hiking",
@@ -156,7 +156,7 @@
   {
     "title": "Camping Stove",
     "description": "Cook delicious meals while camping with our portable camping stove.",
-    "price": 79.99,
+    "price": 79,
     "productId": "P13",
     "category": "camping",
     "isOnSale": false,
@@ -169,7 +169,7 @@
   {
     "title": "Hiking Boots",
     "description": "Experience comfort and durability on the trails with our hiking boots.",
-    "price": 129.99,
+    "price": 129,
     "productId": "P14",
     "category": "hiking",
     "isOnSale": false,
@@ -182,7 +182,7 @@
   {
     "title": "Snow Goggles",
     "description": "Protect your eyes from snow glare with our high-quality snow goggles.",
-    "price": 39.99,
+    "price": 39,
     "productId": "P15",
     "category": "snow",
     "isOnSale": true,
@@ -196,7 +196,7 @@
   {
     "title": "Kayak Paddle",
     "description": "Navigate the water effortlessly with our lightweight kayak paddle.",
-    "price": 49.99,
+    "price": 49,
     "productId": "P16",
     "category": "water",
     "isOnSale": false,
@@ -209,7 +209,7 @@
   {
     "title": "Travel Adapter",
     "description": "Charge your devices worldwide with our versatile travel adapter.",
-    "price": 19.99,
+    "price": 19,
     "productId": "P17",
     "category": "travel",
     "isOnSale": true,
@@ -223,7 +223,7 @@
   {
     "title": "Camping Hammock",
     "description": "Relax in style with our durable camping hammock.",
-    "price": 34.99,
+    "price": 34,
     "productId": "P18",
     "category": "camping",
     "isOnSale": false,
@@ -236,7 +236,7 @@
   {
     "title": "Hiking GPS",
     "description": "Never get lost on the trails with our reliable hiking GPS device.",
-    "price": 89.99,
+    "price": 89,
     "productId": "P19",
     "category": "hiking",
     "isOnSale": true,
@@ -250,7 +250,7 @@
   {
     "title": "Snow Gloves",
     "description": "Keep your hands warm and dry with our waterproof snow gloves.",
-    "price": 24.99,
+    "price": 24,
     "productId": "P20",
     "category": "snow",
     "isOnSale": false,
@@ -263,7 +263,7 @@
   {
     "title": "Inflatable Kayak",
     "description": "Enjoy water adventures with our inflatable kayak that's easy to carry.",
-    "price": 199.99,
+    "price": 199,
     "productId": "P21",
     "category": "water",
     "isOnSale": true,
@@ -277,7 +277,7 @@
   {
     "title": "Travel Blanket",
     "description": "Stay warm and cozy on your travels with our soft and portable travel blanket.",
-    "price": 14.99,
+    "price": 14,
     "productId": "P22",
     "category": "travel",
     "isOnSale": false,
@@ -290,7 +290,7 @@
   {
     "title": "Camping Cookware Set",
     "description": "Prepare delicious meals in the wilderness with our compact camping cookware set.",
-    "price": 59.99,
+    "price": 59,
     "productId": "P23",
     "category": "camping",
     "isOnSale": false,
@@ -303,7 +303,7 @@
   {
     "title": "Hiking Hat",
     "description": "Stay shaded and comfortable on sunny hikes with our adjustable hiking hat.",
-    "price": 19.99,
+    "price": 19,
     "productId": "P24",
     "category": "hiking",
     "isOnSale": true,
@@ -317,7 +317,7 @@
   {
     "title": "Snowshoes",
     "description": "Explore snowy terrains with ease using our durable snowshoes.",
-    "price": 109.99,
+    "price": 109,
     "productId": "P25",
     "category": "snow",
     "isOnSale": true,
@@ -331,7 +331,7 @@
   {
     "title": "Waterproof Dry Bag",
     "description": "Keep your gear dry during water adventures with our reliable waterproof dry bag.",
-    "price": 29.99,
+    "price": 29,
     "productId": "P26",
     "category": "water",
     "isOnSale": false,
@@ -344,7 +344,7 @@
   {
     "title": "Travel Journal",
     "description": "Capture your travel memories in our beautifully crafted travel journal.",
-    "price": 9.99,
+    "price": 9,
     "productId": "P27",
     "category": "travel",
     "isOnSale": true,
@@ -358,7 +358,7 @@
   {
     "title": "Camping Lantern",
     "description": "Light up your camping nights with our portable and bright camping lantern.",
-    "price": 19.99,
+    "price": 19,
     "productId": "P28",
     "category": "camping",
     "isOnSale": false,
@@ -371,7 +371,7 @@
   {
     "title": "Hiking Gloves",
     "description": "Protect your hands on cold hikes with our warm and windproof hiking gloves.",
-    "price": 29.99,
+    "price": 29,
     "productId": "P29",
     "category": "hiking",
     "isOnSale": true,
@@ -385,7 +385,7 @@
   {
     "title": "Water Bottle Filter",
     "description": "Stay hydrated on your adventures with our water bottle filter that removes impurities.",
-    "price": 14.99,
+    "price": 14,
     "productId": "P30",
     "category": "water",
     "isOnSale": true,
@@ -399,7 +399,7 @@
   {
     "title": "Trekking Poles",
     "description": "Enhance your hiking stability with these lightweight trekking poles.",
-    "price": 39.99,
+    "price": 39,
     "image": "/images/trekking-poles.jpg",
     "productId": "P31",
     "category": "hiking",
@@ -411,7 +411,7 @@
   {
     "title": "Winter Jacket",
     "description": "Stay warm in cold conditions with our insulated winter jacket.",
-    "price": 149.99,
+    "price": 149,
     "image": "/images/winter-jacket.jpg",
     "productId": "P32",
     "category": "snow",
@@ -425,7 +425,7 @@
   {
     "title": "Surfboard",
     "description": "Catch the waves and ride with our high-quality surfboard.",
-    "price": 249.99,
+    "price": 249,
     "image": "/images/surfboard.jpg",
     "productId": "P33",
     "category": "water",
@@ -437,7 +437,7 @@
   {
     "title": "Luggage Set",
     "description": "Travel in style with our matching luggage set for all your essentials.",
-    "price": 179.99,
+    "price": 179,
     "image": "/images/luggage-set.jpg",
     "productId": "P34",
     "category": "travel",
@@ -449,7 +449,7 @@
   {
     "title": "Campfire Cooking Set",
     "description": "Cook delicious meals over the campfire with our comprehensive cooking set.",
-    "price": 69.99,
+    "price": 69,
     "image": "/images/campfire-cooking-set.jpg",
     "productId": "P35",
     "category": "camping",
@@ -461,7 +461,7 @@
   {
     "title": "Trail Running Shoes",
     "description": "Hit the trails with confidence in our durable trail running shoes.",
-    "price": 69.99,
+    "price": 69,
     "image": "/images/trail-running-shoes.jpg",
     "productId": "P36",
     "category": "hiking",
@@ -473,7 +473,7 @@
   {
     "title": "Gucci Ski Goggles",
     "description": "Enjoy skiing with clear vision using our high-quality luxury branded ski goggles.",
-    "price": 299.99,
+    "price": 299,
     "image": "/images/gucci-ski-goggles.jpg",
     "productId": "P37",
     "category": "snow",
@@ -488,7 +488,7 @@
   {
     "title": "Paddleboard",
     "description": "Paddle with ease on calm waters with our stable paddleboard.",
-    "price": 199.99,
+    "price": 199,
     "image": "/images/paddleboard.jpg",
     "productId": "P38",
     "category": "water",
