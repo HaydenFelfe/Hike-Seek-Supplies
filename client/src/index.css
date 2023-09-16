@@ -91,9 +91,26 @@ main {
   padding: 20px;
 }
 
+.img-container {
+  width: 900px;
+  height: 400px;
+  overflow: hidden;
+  border: 3px solid rgb(59, 61, 58);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
 .img-large {
-  max-width: 100%;
-  height: auto;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.cart-body-container {
+  border-radius: 20px;
+  border: 3px solid rgb(59, 61, 58);
 }
 
 .discounted-price {

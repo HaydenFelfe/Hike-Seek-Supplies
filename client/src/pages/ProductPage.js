@@ -91,12 +91,12 @@ const ProductPage = () => {
       <h2>{product.title}</h2>
       <Row>
         <Col md={6}>
-          <Card>
+          <Card className="img-container">
             <img className="img-large" src={product.image} alt={product.name} />
           </Card>
         </Col>
         <Col md={6}>
-          <Card>
+          <Card className="cart-body-container">
             <Card.Body>
               <Card.Title>{product.title}</Card.Title>
               <Rating rating={product.rating} numReviews={product.numReviews} />
