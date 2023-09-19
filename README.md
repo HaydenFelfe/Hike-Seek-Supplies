@@ -44,6 +44,7 @@ Admin panel for managing products, categories, and users
 * DotENV
 * GraphQl
 * JsonWebToken
+* MongoDB
 * Mongoose
 * React
 * React Router Dom
@@ -63,9 +64,7 @@ To run this platform locally, follow these steps:
 5. Open the app on your localhost
 ```
 
-```
 Visit the homepage at [H&SSupplies.com](https://hikeseeksupplies-a93d77ad9476.herokuapp.com/)
-```
 
 ## Usage
 1. Visit the homepage and explore the available products.
