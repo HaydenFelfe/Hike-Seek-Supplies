@@ -64,7 +64,7 @@ To run this platform locally, follow these steps:
 ```
 
 ```
-Visit the homepage at https://?????????????????????????????.herokuapp.com/
+Visit the homepage at [H&SSupplies.com](https://hikeseeksupplies-a93d77ad9476.herokuapp.com/)
 ```
 
 ## Usage
@@ -81,7 +81,7 @@ Visit the homepage at https://?????????????????????????????.herokuapp.com/
 ### Featured Products
 ![Project Screenshot](./server/public/images/HSSFeatured.png)
 ### Out of Stock
-![Project Screenshot](./server/public/images/HSSOutOfStock.png)
+![Project Screenshot](./server/public/images/HSSOutofStock.png)
 ### Deals
 ![Project Screenshot](./server/public/images/HSSDeals.png)
 ### Used Items
@@ -104,6 +104,6 @@ Key collaborators:
 [![License:undefined](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/mit)
 
 ## Links
-[Application Link](https://secret-headland-44009-a7fef38932b2.herokuapp.com/)
+[Application Link](https://hikeseeksupplies-a93d77ad9476.herokuapp.com/)
 
-[Github Repo](https://secret-headland-44009-a7fef38932b2.herokuapp.com/)
+[Github Repo](https://github.com/HaydenFelfe/Hike-Seek-Supplies)
