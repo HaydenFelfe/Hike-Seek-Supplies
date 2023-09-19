@@ -63,9 +63,7 @@ To run this platform locally, follow these steps:
 5. Open the app on your localhost
 ```
 
-```
-Visit the homepage at https://?????????????????????????????.herokuapp.com/
-```
+Visit the homepage at [Hike&SeekSupplies.com](https://hikeseeksupplies-a93d77ad9476.herokuapp.com/water)
 
 ## Usage
 1. Visit the homepage and explore the available products.
@@ -104,6 +102,6 @@ Key collaborators:
 [![License:undefined](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/mit)
 
 ## Links
-[Application Link](https://secret-headland-44009-a7fef38932b2.herokuapp.com/)
+[Application Link](https://hikeseeksupplies-a93d77ad9476.herokuapp.com/water)
 
 [Github Repo](https://secret-headland-44009-a7fef38932b2.herokuapp.com/)
