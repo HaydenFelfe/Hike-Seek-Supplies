@@ -79,7 +79,7 @@ Visit the homepage at [Hike&SeekSupplies.com](https://hikeseeksupplies-a93d77ad9
 ### Featured Products
 ![Project Screenshot](./server/public/images/HSSFeatured.png)
 ### Out of Stock
-![Project Screenshot](./server/public/images/HSSOutOfStock.png)
+![Project Screenshot](./server/public/images/HSSOutofStock.png)
 ### Deals
 ![Project Screenshot](./server/public/images/HSSDeals.png)
 ### Used Items
